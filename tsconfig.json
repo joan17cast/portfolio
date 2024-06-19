@@ -29,8 +29,8 @@
     "checkJs": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
-    }
+      "@/*": ["src/*"],
+    },
   },
   "include": [
     "**/*.ts",
@@ -38,7 +38,7 @@
     "**/*.cjs",
     "**/*.mjs",
     "**/*.js",
-    ".eslintrc.cjs"
+    ".eslintrc.cjs",
   ],
   "exclude": ["node_modules", "dist"],
   "ts-node": {
@@ -47,7 +47,7 @@
     "files": true,
     "compilerOptions": {
       "module": "esnext",
-      "isolatedModules": false
-    }
-  }
+      "isolatedModules": false,
+    },
+  },
 }
