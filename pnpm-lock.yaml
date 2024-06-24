@@ -5,7 +5,7 @@ dependencies:
     specifier: 1.38.1
     version: 1.38.1(react-dom@18.2.0)(react@18.2.0)
   clsx:
-    specifier: ^2.1.1
+    specifier: 2.1.1
     version: 2.1.1
   framer-motion:
     specifier: 11.2.10
@@ -22,6 +22,9 @@ dependencies:
   react-i18next:
     specifier: 14.1.2
     version: 14.1.2(i18next@23.11.5)(react-dom@18.2.0)(react@18.2.0)
+  react-icon-cloud:
+    specifier: ^4.1.4
+    version: 4.1.4(react@18.2.0)
 
 devDependencies:
   '@ianvs/prettier-plugin-sort-imports':
@@ -318,6 +321,11 @@ packages:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
     dev: true
+
+  /@csstools/convert-colors@2.0.0:
+    resolution: {integrity: sha512-P7BVvddsP2Wl5v3drJ3ArzpdfXMqoZ/oHOV/yFiGFb3JQr9Z9UXZ9tnHAKJsO89lfprR1F9ExW3Yij21EjEBIA==}
+    engines: {node: '>=6.0.0'}
+    dev: false
 
   /@esbuild/aix-ppc64@0.20.2:
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
@@ -2239,6 +2247,16 @@ packages:
       i18next: 23.11.5
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /react-icon-cloud@4.1.4(react@18.2.0):
+    resolution: {integrity: sha512-hc8yGNU98V6ObPdeNIt75M016xGMxbTWqB4l6exo1uwE5bvFU095unMbX2K3YBKYhGKEV3c7fSmq3jD3cRWX+A==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@csstools/convert-colors': 2.0.0
+      react: 18.2.0
     dev: false
 
   /react-refresh@0.14.2:
