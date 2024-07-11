@@ -1,74 +1,16 @@
-"use client";
-
 import { useEffect, useMemo, useState } from "react";
-import { icons } from "@/utils/icons";
+import { iconStack } from "@/utils/staticContent";
+import { useNavigate } from "@tanstack/react-router";
 import clsx from "clsx";
 import {
-  Cloud,
   fetchSimpleIcons,
-  ICloud,
   renderSimpleIcon,
-  SimpleIcon,
+  type SimpleIcon,
 } from "react-icon-cloud";
 
-const iconSlugs = [
-  "typescript",
-  "javascript",
-  "tailwindcss",
-  "react",
-  "flutter",
-  "html5",
-  "css3",
-  "nodedotjs",
-  "nextdotjs",
-  "jest",
-  "docker",
-  "git",
-  "slack",
-  "github",
-  "redux",
-  "reactquery",
-  "trpc",
-  "zod",
-  "playwright",
-  "axios",
-  "linear",
-  "vite",
-  "gitlab",
-  "visualstudiocode",
-  "androidstudio",
-  "sonarqube",
-  "figma",
-];
+import OrbitingCircles from "../animations/orbitingCircles";
 
-export const cloudProps: Omit<ICloud, "children"> = {
-  containerProps: {
-    style: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
-      paddingTop: 40,
-    },
-  },
-  options: {
-    reverse: true,
-    depth: 1,
-    wheelZoom: false,
-    imageScale: 2,
-    activeCursor: "default",
-    tooltip: "native",
-    initial: [0.1, -0.1],
-    clickToFront: 500,
-    tooltipDelay: 0,
-    outlineColour: "#0000",
-    maxSpeed: 0.04,
-    minSpeed: 0.02,
-    // dragControl: false,
-  },
-};
-
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
+const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
   const minContrastRatio = theme === "dark" ? 2 : 1.2;
@@ -92,10 +34,10 @@ type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
 export default function BentoCardStack() {
   const [data, setData] = useState<IconData | null>(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
-    fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
-  }, [iconSlugs]);
+    void fetchSimpleIcons({ slugs: iconStack }).then(setData);
+  }, []);
 
   const renderedIcons = useMemo(() => {
     if (!data) return null;
@@ -105,25 +47,62 @@ export default function BentoCardStack() {
     );
   }, [data]);
 
+  const radii = [50, 90, 130, 170];
+  const iconDistribution = [
+    4,
+    6,
+    8,
+    renderedIcons ? renderedIcons.length - 18 : 0,
+  ];
+  const cumulativeIconDistribution = iconDistribution.reduce(
+    (acc: number[], current, index) => {
+      if (index === 0) {
+        acc.push(current);
+      } else {
+        const lastIndex = acc[acc.length - 1];
+        if (lastIndex !== undefined) {
+          acc.push(lastIndex + current);
+        }
+      }
+      return acc;
+    },
+    [] as number[],
+  );
+
   return (
     <div
       className={clsx(
-        "group relative  flex flex-col justify-start overflow-hidden rounded-xl",
+        "group relative flex min-h-96 flex-col justify-start overflow-hidden rounded-xl",
+        "cursor-pointer transition-all duration-200 ease-in-out hover:scale-[103%]",
         "transform-gpu bg-transparent [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        "relative flex w-full  items-center justify-center overflow-hidden rounded-lg",
       )}
+      onClick={() => navigate({ to: "/stack" })}
     >
-      <div className="pointer-events-none  flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 ">
-        <div className="flex flex-row items-center justify-start gap-4 pb-4">
-          <div className=" text-gray-300">{icons.stack}</div>
-          <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
-            Stack
-          </h3>
-        </div>
-        <Cloud {...cloudProps}>
-          <>{renderedIcons}</>
-          <></>
-        </Cloud>
-      </div>
+      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+        Stack
+      </span>
+      {renderedIcons?.map((icon, index) => {
+        const circleIndex = cumulativeIconDistribution.findIndex(
+          (value) => index < value,
+        );
+
+        const radius = radii[circleIndex];
+        const reverse = circleIndex % 2 !== 0;
+
+        return (
+          <OrbitingCircles
+            key={index}
+            className="h-[25px] w-[25px] border-none"
+            duration={20}
+            delay={index * 3}
+            radius={radius}
+            reverse={reverse}
+          >
+            {icon}
+          </OrbitingCircles>
+        );
+      })}
     </div>
   );
 }
