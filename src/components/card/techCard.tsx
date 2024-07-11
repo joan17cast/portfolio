@@ -1,11 +1,11 @@
 import clsx from "clsx";
 
-interface Item {
+interface TechCardProps {
   icon: JSX.Element;
   label: string;
 }
 
-const TechCard = ({ icon, label }: Item) => {
+const TechCard = ({ icon, label }: TechCardProps) => {
   return (
     <figure
       className={clsx(
@@ -15,7 +15,7 @@ const TechCard = ({ icon, label }: Item) => {
       )}
     >
       <div className="flex flex-col items-center justify-center gap-1 py-4 text-white">
-        <div className="flex  items-center justify-center">{icon}</div>
+        <div className="flex  items-center justify-center ">{icon}</div>
         {label}
       </div>
     </figure>

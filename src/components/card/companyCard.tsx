@@ -1,43 +1,25 @@
 import clsx from "clsx";
 
-interface Item {
-  company: string;
-  description: string;
+interface CompanyCardProps {
   icon: JSX.Element;
-  color: string;
-  time: string;
+  url: string;
 }
 
-const CompanyCard = ({ company, description, icon, color, time }: Item) => {
+const CompanyCard = ({ icon, url }: CompanyCardProps) => {
   return (
-    <figure
+    <a
+      href={url}
+      target="_blank"
       className={clsx(
-        "relative mx-auto min-h-fit w-full  transform cursor-pointer overflow-hidden rounded-2xl p-4",
+        "relative mx-auto min-h-fit min-w-44  transform cursor-pointer overflow-hidden rounded-2xl px-4",
         "transition-all duration-200 ease-in-out hover:scale-[103%]",
         "transform-gpu bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
       )}
     >
-      <div className="flex flex-row items-center gap-3">
-        <div
-          className="flex h-12 w-12 items-center justify-center  p-1"
-          style={{
-            backgroundColor: color,
-          }}
-        >
-          <span className="flex h-12 w-12 items-center justify-center text-lg">
-            {icon}
-          </span>
-        </div>
-        <div className="flex flex-col overflow-hidden">
-          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium text-white ">
-            <span className="text-sm sm:text-lg">{company}</span>
-            <span className="mx-1">·</span>
-            <span className="text-xs text-gray-500">{time}</span>
-          </figcaption>
-          <p className="text-sm font-normal text-white/60">{description}</p>
-        </div>
+      <div className="flex flex-row items-center justify-center gap-3">
+        <div className="flex h-20 w-20 items-center justify-center">{icon}</div>
       </div>
-    </figure>
+    </a>
   );
 };
 
