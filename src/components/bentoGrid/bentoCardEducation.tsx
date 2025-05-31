@@ -39,7 +39,7 @@ const BentoCardEducation = ({ name }: BentoCardExperienceProps) => (
         <div className="flex flex-row items-center justify-start gap-2">
           <div className=" text-gray-300">{icons.book}</div>
           <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
-            Education
+            {name}
           </h3>
         </div>
       </section>
