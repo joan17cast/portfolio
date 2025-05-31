@@ -13,11 +13,9 @@ const WorkExperience = () => {
   const { t } = useTranslation();
   return (
     <Layout>
-      <div className="flex flex-col w-full max-w-[1000px] space-y-6 ">
-        <section className="w-full space-y-4">
-          <h1 className="text-5xl font-bold text-white">{t("workExperience.title")}</h1>
-        </section>
-        <div className="flex  w-full max-w-[1000px] gap-4 ">
+      <div className="flex flex-col w-full max-w-[1200px] space-y-6 ">
+        
+        <div className="flex  w-full max-w-[1200px] gap-4 ">
           <div className="relative col-span-1 flex w-full transform-gpu flex-col items-center justify-center overflow-hidden rounded-xl bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] md:col-span-2 ">
             <CompanySlider pauseOnHover className="[--duration:20s]">
               {companysData.map((company) => (
@@ -32,6 +30,9 @@ const WorkExperience = () => {
             <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[rgba(20,20,20,0.6)]"></div>
           </div>
         </div>
+        <section className="w-full space-y-4">
+          <h1 className="text-5xl font-bold text-white">{t("workExperience.title")}</h1>
+        </section>
         <div className="flex flex-col divide-y gap-4 pb-4">
           <CompanyDetailCard
             companyName={t("workExperience.cipher.companyName")}
