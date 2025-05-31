@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { icons } from "@/utils/icons";
 import clsx from "clsx";
 
@@ -13,7 +12,7 @@ const BentoCard = ({
 }: {
   name: string;
   className: string;
-  background: ReactNode;
+  background: React.ReactNode;
   icon: JSX.Element;
   description: string;
   href: string;
