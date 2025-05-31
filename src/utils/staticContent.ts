@@ -1,4 +1,5 @@
 import bonareaImg from "@/assets/images/brands/bonarea.png";
+import cipherImg from "@/assets/images/brands/cipher.png";
 import dammImg from "@/assets/images/brands/damm.png";
 import freseniusImg from "@/assets/images/brands/fresenius.png";
 import grifolsImg from "@/assets/images/brands/grifols.png";
@@ -38,6 +39,11 @@ export const iconStack = [
 
 export const companysData = [
   {
+    icon: cipherImg,
+    url: "https://cipher.com/",
+    alt: "Cipher",
+  },
+  {
     icon: grifolsImg,
     url: "https://www.grifols.com/",
     alt: "Grifols",
@@ -71,5 +77,5 @@ export const companysData = [
     icon: puigImg,
     url: "https://www.puig.com/",
     alt: "Puig",
-  }
+  },
 ];

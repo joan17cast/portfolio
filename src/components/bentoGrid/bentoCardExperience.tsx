@@ -1,6 +1,7 @@
 import bonareaLogo from "@/assets/images/companies/bonarea.png";
 import clibbLogo from "@/assets/images/companies/clibb.webp";
 import nexionaLogo from "@/assets/images/companies/nexiona.png";
+import cipherLogo from "@/assets/images/companies/cipher.png";
 import CompanyExperienceCard from "@/components/card/companyExperienceCard";
 import { icons } from "@/utils/icons";
 import { useNavigate } from "@tanstack/react-router";
@@ -12,9 +13,15 @@ interface BentoCardExperienceProps {
 
 const workExperience = [
   {
+    company: "Cipher Prosegur",
+    description: "Frontend team lead",
+    time: "2024 - Present (Remote)",
+    icon: <img src={cipherLogo} alt="Nexiona" />,
+  },
+  {
     company: "Nexiona",
     description: "Senior Frontend Developer",
-    time: "2022 - Present (Remote)",
+    time: "2022 - 2024 (Remote)",
     icon: <img src={nexionaLogo} alt="Nexiona" />,
   },
   {
@@ -41,8 +48,8 @@ const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
         "transform-gpu bg-transparent [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
       )}
     >
-      <div className="  flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 ">
-        <section className="flex flex-row items-center justify-between gap-4 pb-4">
+      <div className="  flex transform-gpu flex-col gap-1 px-2 py-4 transition-all duration-300 ">
+        <section className="flex flex-row items-center justify-between gap-4 pb-4 px-3">
           <div className="flex flex-row items-center justify-start gap-2">
             <div className=" text-gray-300">{icons.workExperience}</div>
             <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
@@ -56,7 +63,7 @@ const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
             More info
           </button>
         </section>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 sm:max-h-72 sm:overflow-y-auto px-2 ">
           {workExperience.map((item) => (
             <CompanyExperienceCard {...item} key={item.company} />
           ))}
