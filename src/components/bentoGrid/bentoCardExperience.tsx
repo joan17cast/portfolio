@@ -17,7 +17,7 @@ const workExperience = [
     company: "Cipher Prosegur",
     description: "Frontend team lead",
     time: "2024 - Present (Remote)",
-    icon: <img src={cipherLogo} alt="Nexiona" />,
+    icon: <img src={cipherLogo} alt="Cipher Prosegur" />,
   },
   {
     company: "Nexiona",
