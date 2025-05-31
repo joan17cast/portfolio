@@ -1,6 +1,8 @@
 import notFoundImage from "@/assets/images/notFound.svg";
+import { useTranslation } from "react-i18next";
 
 const NotFound = () => {
+  const { t } = useTranslation();
   return (
     <div
       style={{
@@ -9,7 +11,7 @@ const NotFound = () => {
       }}
       className="relative flex h-screen w-full flex-col items-center justify-start gap-4 overflow-auto bg-black p-4 pt-14 md:px-20"
     >
-      <h1 className="">Pagina no encontrada</h1>
+      <h1 className="">{t("notFound")}</h1>
       <img src={notFoundImage} className="h-96 w-96" />
     </div>
   );

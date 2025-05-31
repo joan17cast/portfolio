@@ -10,8 +10,10 @@ import {
 import { CompanyCard } from "@/components/card";
 import { CompanySlider } from "@/components/slider";
 import { companysData } from "@/utils/staticContent";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
   return (
     <div
       style={{
@@ -38,18 +40,24 @@ const Home = () => {
         
       </div>
       <div className="flex flex-row items-center gap-2">
-          <button className="transform rounded-md bg-transparent px-2 text-gray-200 transition-transform duration-300 [border:1px_solid_rgba(255,255,255,.1)] hover:scale-110">
+          <button 
+            onClick={() => i18n.changeLanguage('es')} 
+            className={`transform rounded-md bg-transparent px-2 text-gray-200 transition-transform duration-300 [border:1px_solid_rgba(255,255,255,.1)] hover:scale-110 ${i18n.language === 'es' ? 'font-bold bg-zinc-800' : 'text-zinc-400'}`}
+          >
             ES
-            </button>
-            <button className="transform rounded-md bg-transparent px-2 text-gray-200 transition-transform duration-300 [border:1px_solid_rgba(255,255,255,.1)] hover:scale-110">
-              EN
-            </button>
-        </div>
+          </button>
+          <button 
+            onClick={() => i18n.changeLanguage('en')} 
+            className={`transform rounded-md bg-transparent px-2 text-gray-200 transition-transform duration-300 [border:1px_solid_rgba(255,255,255,.1)] hover:scale-110 ${i18n.language === 'en' ? 'font-bold bg-zinc-800' : 'text-zinc-400'}`}
+          >
+            EN
+          </button>
+      </div>
       </nav>
       <section className="grid max-w-[1200px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <section className="col-span-1 flex flex-col justify-start gap-4 md:col-span-2 md:flex-row lg:col-span-1 lg:flex-col">
-          <BentoCardExperience name="Experience" />
-          <BentoCardEducation name="Education" />
+          <BentoCardExperience name={t("experience")} />
+          <BentoCardEducation name={t("education")} />
         </section>
         <div className="col-span-1 grid grid-cols-1 gap-4 md:col-span-2 md:grid-cols-2">
           <section className="flex flex-col  justify-start gap-4">

@@ -6,6 +6,7 @@ import CompanyExperienceCard from "@/components/card/companyExperienceCard";
 import { icons } from "@/utils/icons";
 import { useNavigate } from "@tanstack/react-router";
 import clsx from "clsx";
+import { t } from "i18next";
 
 interface BentoCardExperienceProps {
   name: string;
@@ -60,7 +61,7 @@ const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
             className="transform rounded-md bg-transparent px-2 text-gray-200 transition-transform duration-300 [border:1px_solid_rgba(255,255,255,.1)] hover:scale-110"
             onClick={() => navigate({ to: "/work-experience" })}
           >
-            More info
+            {t("moreInfo")}
           </button>
         </section>
         <div className="flex flex-col gap-2 sm:max-h-72 sm:overflow-y-auto px-2 ">

@@ -4,8 +4,10 @@ import linkedinLogo from "@/assets/images/links/linkedin.png";
 import cvEsPDF from "@/assets/pdf/CV_Joan_Peruchet_ES_com.pdf";
 import { icons } from "@/utils/icons";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 export default function BentoCardProjects() {
+  const { t } = useTranslation();
   return (
     <div
       className={clsx(
@@ -18,7 +20,7 @@ export default function BentoCardProjects() {
           <div className="flex flex-row gap-2">
             <div className=" text-gray-300">{icons.contacts}</div>
             <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
-              Contact
+              {t("contact")}
             </h3>
           </div>
           <div className="group relative cursor-pointer ">
