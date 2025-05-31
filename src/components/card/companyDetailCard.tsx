@@ -48,7 +48,7 @@ const CompanyDetailCard = ({
       {stack && (
         <>
           <h2 className="text-2xl font-semibold text-white">Stack</h2>
-          <div className="flex w-full flex-wrap items-start justify-start gap-4">
+          <div className=" w-full gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">   
             {stack.map((item) => (
               <TechCard {...item} />
             ))}
