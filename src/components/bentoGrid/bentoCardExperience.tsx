@@ -4,9 +4,7 @@ import nexionaLogo from "@/assets/images/companies/nexiona.png";
 import cipherLogo from "@/assets/images/companies/cipher.png";
 import CompanyExperienceCard from "@/components/card/companyExperienceCard";
 import { icons } from "@/utils/icons";
-import { useNavigate } from "@tanstack/react-router";
 import clsx from "clsx";
-import { t } from "i18next";
 
 interface BentoCardExperienceProps {
   name: string;
@@ -14,24 +12,28 @@ interface BentoCardExperienceProps {
 
 const workExperience = [
   {
+    id: "cipher",
     company: "Cipher Prosegur",
     description: "Frontend team lead",
     time: "2024 - Present (Remote)",
     icon: <img src={cipherLogo} alt="Cipher Prosegur" />,
   },
   {
+    id: "nexiona",
     company: "Nexiona",
     description: "Senior Frontend Developer",
     time: "2022 - 2024 (Remote)",
     icon: <img src={nexionaLogo} alt="Nexiona" />,
   },
   {
+    id: "bonarea",
     company: "BonÀrea Agrupa",
     description: "Junior Frontend Developer",
     time: "2017 - 2022 (Guissona)",
     icon: <img src={bonareaLogo} alt="BonÀrea Agrupa" />,
   },
   {
+    id: "clibb",
     company: "Clibb Software solutions",
     description: "Junior developer",
     time: "2016 - 2017 (Lleida)",
@@ -40,7 +42,6 @@ const workExperience = [
 ];
 
 const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
-  const navigate = useNavigate();
   return (
     <div
       key={name}
@@ -57,12 +58,7 @@ const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
               {name}
             </h3>
           </div>
-          <button
-            className="transform rounded-md bg-transparent px-2 text-gray-200 transition-transform duration-300 [border:1px_solid_rgba(255,255,255,.1)] hover:scale-110"
-            onClick={() => navigate({ to: "/work-experience" })}
-          >
-            {t("moreInfo")}
-          </button>
+          
         </section>
         <div className="flex flex-col gap-2 sm:max-h-72 sm:overflow-y-auto px-2 ">
           {workExperience.map((item) => (

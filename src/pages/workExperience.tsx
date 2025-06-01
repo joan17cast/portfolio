@@ -8,9 +8,21 @@ import { CompanySlider } from "@/components/slider";
 import { icons } from "@/utils/icons";
 import { companysData } from "@/utils/staticContent";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 const WorkExperience = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, []);
+
   return (
     <Layout>
       <div className="flex flex-col w-full max-w-[1200px] space-y-6 ">
@@ -35,6 +47,7 @@ const WorkExperience = () => {
         </section>
         <div className="flex flex-col divide-y gap-4 pb-4">
           <CompanyDetailCard
+            id="cipher"
             companyName={t("workExperience.cipher.companyName")}
             otherInformation={t("workExperience.cipher.otherInformation")}
             companyIcon={<img src={cipherLogo} alt="Nexiona" />}
@@ -64,6 +77,7 @@ const WorkExperience = () => {
             ]}
           />
           <CompanyDetailCard
+            id="nexiona"
             companyName={t("workExperience.nexiona.companyName")}
             otherInformation={t("workExperience.nexiona.otherInformation")}
             companyIcon={<img src={nexionaLogo} alt="Nexiona" />}
@@ -92,6 +106,7 @@ const WorkExperience = () => {
             ]}
           />
           <CompanyDetailCard
+            id="bonarea"
             companyName={t("workExperience.bonarea.companyName")}
             otherInformation={t("workExperience.bonarea.otherInformation")}
             companyIcon={<img src={bonareaLogo} alt="BonÀrea Agrupa" />}
@@ -116,6 +131,7 @@ const WorkExperience = () => {
             ]}
           />
           <CompanyDetailCard
+            id="clibb"
             companyName={t("workExperience.clibb.companyName")}
             otherInformation={t("workExperience.clibb.otherInformation")}
             companyIcon={<img src={clibbLogo} alt="Clibb" />}

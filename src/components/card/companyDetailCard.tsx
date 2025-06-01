@@ -6,6 +6,7 @@ interface StackItem {
 }
 
 interface CompanyDetailCardProps {
+  id?: string;
   companyName: string;
   otherInformation: string;
   companyIcon: JSX.Element;
@@ -14,6 +15,7 @@ interface CompanyDetailCardProps {
 }
 
 const CompanyDetailCard = ({
+  id,
   companyName,
   otherInformation,
   companyIcon,
@@ -21,7 +23,7 @@ const CompanyDetailCard = ({
   stack,
 }: CompanyDetailCardProps) => {
   return (
-    <article className="flex flex-col space-y-2 border-t border-l border-gray-600 rounded-tl-lg pl-4 pt-2 ">
+    <article id={id} className="flex flex-col space-y-2 border-t border-l border-gray-600 rounded-tl-lg pl-4 pt-2 ">
       <div className="flex flex-wrap items-center gap-4">
         <div
           className="flex h-12 w-12 items-center justify-center  rounded-md p-1"
@@ -48,7 +50,7 @@ const CompanyDetailCard = ({
       {stack && (
         <>
           <h2 className="text-2xl font-semibold text-white">Stack</h2>
-          <div className=" w-full gap-4 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">   
+          <div className=" w-full gap-4 grid grid-cols-2  sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">   
             {stack.map((item) => (
               <TechCard {...item} />
             ))}

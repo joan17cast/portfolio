@@ -5,9 +5,17 @@ interface CompanyExperienceCardProps {
   description: string;
   icon: JSX.Element;
   time: string;
+  id?: string; // Optional id for redirection
 }
 
-const CompanyExperienceCard = ({ company, description, icon, time }: CompanyExperienceCardProps) => {
+const CompanyExperienceCard = ({ company, description, icon, time, id }: CompanyExperienceCardProps) => {
+  // Handle card click to redirect if id is provided
+  const handleClick = () => {
+    if (id) {
+      window.location.href = `/work-experience#${id}`;
+    }
+  };
+
   return (
     <figure
       className={clsx(
@@ -15,6 +23,8 @@ const CompanyExperienceCard = ({ company, description, icon, time }: CompanyExpe
         "transition-all duration-200 ease-in-out hover:scale-[103%]",
         "transform-gpu bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
       )}
+      onClick={handleClick}
+      style={id ? { cursor: "pointer" } : {}}
     >
       <div className="flex flex-row items-center gap-3">
         <div
