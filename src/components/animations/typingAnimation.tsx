@@ -5,12 +5,14 @@ interface TypingAnimationProps {
   text: string;
   duration?: number;
   className?: string;
+  onComplete?: () => void;
 }
 
 export default function TypingAnimation({
   text,
   duration = 100,
   className,
+  onComplete,
 }: TypingAnimationProps) {
   const [displayedText, setDisplayedText] = useState<string>("");
   const [i, setI] = useState<number>(0);
@@ -22,13 +24,14 @@ export default function TypingAnimation({
         setI(i + 1);
       } else {
         clearInterval(typingEffect);
+        if (onComplete) onComplete();
       }
     }, duration);
 
     return () => {
       clearInterval(typingEffect);
     };
-  }, [duration, i]);
+  }, [duration, i, text, onComplete]);
 
   return (
     <h1 className={clsx("font-display text-left font-bold ", className)}>

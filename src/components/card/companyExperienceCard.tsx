@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { useNavigate } from "@tanstack/react-router";
 
 interface CompanyExperienceCardProps {
   company: string;
@@ -9,10 +10,11 @@ interface CompanyExperienceCardProps {
 }
 
 const CompanyExperienceCard = ({ company, description, icon, time, id }: CompanyExperienceCardProps) => {
+  const navigate = useNavigate();
   // Handle card click to redirect if id is provided
   const handleClick = () => {
     if (id) {
-      window.location.href = `/work-experience#${id}`;
+      void navigate({ to: "/work-experience", search: {}, hash: id });
     }
   };
 
