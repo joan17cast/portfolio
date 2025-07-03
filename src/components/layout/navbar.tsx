@@ -2,20 +2,28 @@ import profileImage from "@/assets/images/profile.webp";
 import { TypingAnimation } from "@/components/animations";
 import { useTranslation } from "react-i18next";
 import { useTypingAnimationStore } from "@/store/typingAnimationStore";
+import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ scrolled }: { scrolled: boolean }) => {
   const { i18n } = useTranslation();
   const { hasSeenTyping, setHasSeenTyping } = useTypingAnimationStore();
-
 
   const handleTypingComplete = () => {
     setHasSeenTyping(true);
   };
 
   return (
-    <nav className="flex flex-row justify-between items-center w-full max-w-[1200px] p-4">
+    <nav
+      className={`flex  flex-row justify-center items-center w-full  p-4 transition-all duration-300 z-30  ${
+        scrolled ? "backdrop-blur-md" : ""
+      }`}
+      style={{
+        boxShadow: scrolled ? "0 2px 16px 0 rgba(0,0,0,0.12)" : undefined,
+      }}
+    >
+      <div className="flex w-full max-w-[1200px]">
       <div
-        className="group relative flex w-full max-w-[1200px] gap-4 flex-col sm:flex-row items-center sm:items-start cursor-pointer"
+        className="group relative  flex w-full max-w-[1200px] gap-4 flex-col sm:flex-row items-center sm:items-start cursor-pointer"
         onClick={() => {
           window.history.pushState({}, '', '/');
           window.dispatchEvent(new PopStateEvent('popstate'));
@@ -56,6 +64,7 @@ const Navbar = () => {
         >
           EN
         </button>
+      </div>
       </div>
     </nav>
   );

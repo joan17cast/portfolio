@@ -13,9 +13,9 @@ const Home = () => {
         backgroundImage:
           "radial-gradient(circle 1000px at top, rgba(120,119,198,0.3), rgba(20,20,20,0.3))",
       }}
-      className="relative flex h-screen w-full flex-col items-center justify-start gap-4 overflow-auto bg-black p-4 md:px-20 pt-8"
+      className="relative flex h-screen w-full flex-col items-center justify-start gap-4 overflow-auto bg-black px-4 md:px-20 "
     >
-      <Navbar />
+      <Navbar scrolled={false}/>
       <section className="grid max-w-[1200px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <section className="col-span-1 flex flex-col justify-start gap-4 md:col-span-2 md:flex-row lg:col-span-1 lg:flex-col">
           <BentoCardExperience name={t("experience")} />
