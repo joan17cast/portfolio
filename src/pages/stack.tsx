@@ -3,152 +3,132 @@ import { Layout } from "@/components/layout";
 import { icons } from "@/utils/icons";
 import { useTranslation } from "react-i18next";
 
-const Stack = () => {
-  const { t } = useTranslation();
-  return (
-    <Layout>
-      <div className="max-w-[1000px] space-y-6">
-        <section className="w-full space-y-4">
-          <h1 className="text-5xl font-bold text-white">{t("stack.title")}</h1>
-          <p className=" text-gray-400">{t("stack.intro")}</p>
-        </section>
-        <div className="space-y-4 border-l-2 border-gray-600 pl-4">
-          <h3 className="text-xl font-bold text-white">
-            {t("stack.webDevelopment")}
-          </h3>
-          <div className="flex w-full flex-wrap items-start justify-start gap-4">
-            <TechCard
-              icon={icons.stackIcons.nodedotjs}
-              label={t("stack.nodejs")}
-            />
-            <TechCard icon={icons.stackIcons.react} label={t("stack.react")} />
-            <TechCard
-              icon={icons.stackIcons.typescript}
-              label={t("stack.typescript")}
-            />
-            <TechCard
-              icon={icons.stackIcons.javascript}
-              label={t("stack.javascript")}
-            />
-            <TechCard icon={icons.stackIcons.git} label={t("stack.git")} />
-            <TechCard icon={icons.stackIcons.zod} label={t("stack.zod")} />
-            <TechCard icon={icons.stackIcons.html5} label={t("stack.html5")} />
-            <TechCard icon={icons.stackIcons.pnpm} label={t("stack.pnpm")} />
-            <TechCard icon={icons.stackIcons.axios} label={t("stack.axios")} />
-            <TechCard icon={icons.stackIcons.leaflet} label={t("stack.leaflet")} />
-            <TechCard icon={icons.stackIcons.mapbox} label={t("stack.mapbox")} />
-            <TechCard
-              icon={icons.stackIcons.chartdotjs}
-              label={t("stack.reactCharts")}
-            />
-            <TechCard
-              icon={icons.stackIcons.reactquery}
-              label={t("stack.reactQuery")}
-            />
-            <TechCard
-              icon={icons.stackIcons.reactRouter}
-              label={t("stack.reactRouter")}
-            />
-          </div>
-          <h3 className="font-regular text-lg text-white">
-            {t("stack.frameworks")}
-          </h3>
-          <div className="flex w-full flex-wrap items-start justify-start gap-4">
-            <TechCard icon={icons.stackIcons.vite} label={t("stack.vite")} />
-            <TechCard icon={icons.stackIcons.nextdotjs} label={t("stack.nextjs")} />
-          </div>
-          <h3 className="font-regular text-lg text-white">
-            {t("stack.stateManagement")}
-          </h3>
-          <div className="flex w-full flex-wrap items-start justify-start gap-4">
-            <TechCard icon={icons.stackIcons.redux} label={t("stack.redux")} />
-            <TechCard icon={icons.stackIcons.zustand} label={t("stack.zustand")} />
-            <TechCard icon={icons.stackIcons.jotai} label={t("stack.jotai")} />
-          </div>
-          <h3 className="font-regular text-lg text-white">
-            {t("stack.testingQA")}
-          </h3>
-          <div className="flex w-full flex-wrap items-start justify-start gap-4">
-            <TechCard
-              icon={icons.stackIcons.playwright}
-              label={t("stack.playwright")}
-            />
-            <TechCard icon={icons.stackIcons.jest} label={t("stack.jest")} />
-            <TechCard
-              icon={icons.stackIcons.sonarqube}
-              label={t("stack.sonarqube")}
-            />
-          </div>
-          <h3 className="font-regular text-lg text-white">{t("stack.styles")}</h3>
-          <div className="flex w-full flex-wrap items-start justify-start gap-4">
-            <TechCard
-              icon={icons.stackIcons.tailwindcss}
-              label={t("stack.tailwindcss")}
-            />
-            <TechCard icon={icons.stackIcons.css3} label={t("stack.css3")} />
-            <TechCard
-              icon={icons.stackIcons.materialUI}
-              label={t("stack.materialUI")}
-            />
-          </div>
-        </div>
+const stackData = [
+	{
+		titleKey: "stack.webDevelopment",
+		cards: [
+			{ icon: icons.stackIcons.nodedotjs, labelKey: "stack.nodejs" },
+			{ icon: icons.stackIcons.react, labelKey: "stack.react" },
+			{ icon: icons.stackIcons.typescript, labelKey: "stack.typescript" },
+			{ icon: icons.stackIcons.javascript, labelKey: "stack.javascript" },
+			{ icon: icons.stackIcons.git, labelKey: "stack.git" },
+			{ icon: icons.stackIcons.zod, labelKey: "stack.zod" },
+			{ icon: icons.stackIcons.html5, labelKey: "stack.html5" },
+			{ icon: icons.stackIcons.pnpm, labelKey: "stack.pnpm" },
+			{ icon: icons.stackIcons.axios, labelKey: "stack.axios" },
+			{ icon: icons.stackIcons.leaflet, labelKey: "stack.leaflet" },
+			{ icon: icons.stackIcons.mapbox, labelKey: "stack.mapbox" },
+			{ icon: icons.stackIcons.chartdotjs, labelKey: "stack.reactCharts" },
+			{ icon: icons.stackIcons.reactquery, labelKey: "stack.reactQuery" },
+			{ icon: icons.stackIcons.reactRouter, labelKey: "stack.reactRouter" },
+		],
+		titleClass: "text-xl font-bold text-white",
+	},
+	{
+		titleKey: "stack.frameworks",
+		cards: [
+			{ icon: icons.stackIcons.vite, labelKey: "stack.vite" },
+			{ icon: icons.stackIcons.nextdotjs, labelKey: "stack.nextjs" },
+		],
+		titleClass: "font-regular text-lg text-white",
+	},
+	{
+		titleKey: "stack.stateManagement",
+		cards: [
+			{ icon: icons.stackIcons.redux, labelKey: "stack.redux" },
+			{ icon: icons.stackIcons.zustand, labelKey: "stack.zustand" },
+			{ icon: icons.stackIcons.jotai, labelKey: "stack.jotai" },
+		],
+		titleClass: "font-regular text-lg text-white",
+	},
+	{
+		titleKey: "stack.testingQA",
+		cards: [
+			{ icon: icons.stackIcons.playwright, labelKey: "stack.playwright" },
+			{ icon: icons.stackIcons.jest, labelKey: "stack.jest" },
+			{ icon: icons.stackIcons.sonarqube, labelKey: "stack.sonarqube" },
+		],
+		titleClass: "font-regular text-lg text-white",
+	},
+	{
+		titleKey: "stack.styles",
+		cards: [
+			{ icon: icons.stackIcons.tailwindcss, labelKey: "stack.tailwindcss" },
+			{ icon: icons.stackIcons.css3, labelKey: "stack.css3" },
+			{ icon: icons.stackIcons.materialUI, labelKey: "stack.materialUI" },
+		],
+		titleClass: "font-regular text-lg text-white",
+	},
+	{
+		titleKey: "stack.design",
+		cards: [
+			{ icon: icons.stackIcons.figma, labelKey: "stack.figma" },
+			{ icon: icons.stackIcons.photoshop, labelKey: "stack.photoshop" },
+		],
+		titleClass: "text-xl font-semibold text-white",
+	},
+	{
+		titleKey: "stack.cloud",
+		cards: [
+			{ icon: icons.stackIcons.rancher, labelKey: "stack.rancher" },
+			{ icon: icons.stackIcons.portainer, labelKey: "stack.portainer" },
+		],
+		titleClass: "text-xl font-semibold text-white",
+	},
+	{
+		titleKey: "stack.mobileDevelopment",
+		cards: [
+			{ icon: icons.stackIcons.react, labelKey: "stack.reactNative" },
+			{ icon: icons.stackIcons.flutter, labelKey: "stack.flutter" },
+			{ icon: icons.stackIcons.androidstudio, labelKey: "stack.androidStudio" },
+		],
+		titleClass: "text-xl font-semibold text-white",
+	},
+	{
+		titleKey: "stack.productivity",
+		cards: [
+			{ icon: icons.stackIcons.gitlab, labelKey: "stack.gitlab" },
+			{ icon: icons.stackIcons.github, labelKey: "stack.github" },
+			{ icon: icons.stackIcons.linear, labelKey: "stack.linear" },
+			{ icon: icons.stackIcons.slack, labelKey: "stack.slack" },
+			{ icon: icons.stackIcons.visualstudiocode, labelKey: "stack.visualStudioCode" },
+			{ icon: icons.stackIcons.docker, labelKey: "stack.docker" },
+			{ icon: icons.stackIcons.notion, labelKey: "stack.notion" },
+		],
+		titleClass: "text-xl font-semibold text-white",
+	},
+];
 
-        <div className="space-y-4 border-l-2 border-gray-600 pl-4">
-          <h3 className="text-xl font-semibold text-white">
-            {t("stack.design")}
-          </h3>
-          <div className="flex w-full flex-row items-start justify-start gap-4">
-            <TechCard icon={icons.stackIcons.figma} label={t("stack.figma")} />
-            <TechCard
-              icon={icons.stackIcons.photoshop}
-              label={t("stack.photoshop")}
-            />
-          </div>
-        </div>
-        <div className="space-y-4 border-l-2 border-gray-600 pl-4">
-          <h3 className="text-xl font-semibold text-white">
-            {t("stack.cloud")}
-          </h3>
-          <div className="flex w-full flex-row items-start justify-start gap-4">
-            <TechCard icon={icons.stackIcons.rancher} label={t("stack.rancher")} />
-            <TechCard icon={icons.stackIcons.portainer} label={t("stack.portainer")} />
-          </div>
-        </div>
-        <div className="space-y-4 border-l-2 border-gray-600 pl-4">
-          <h3 className="text-xl font-semibold text-white">
-            {t("stack.mobileDevelopment")}
-          </h3>
-          <div className="flex w-full flex-wrap items-start justify-start gap-4">
-            <TechCard
-              icon={icons.stackIcons.react}
-              label={t("stack.reactNative")}
-            />
-            <TechCard icon={icons.stackIcons.flutter} label={t("stack.flutter")} />
-            <TechCard
-              icon={icons.stackIcons.androidstudio}
-              label={t("stack.androidStudio")}
-            />
-          </div>
-        </div>
-        <div className="space-y-4 border-l-2 border-gray-600 pl-4">
-          <h3 className="text-xl font-semibold text-white">
-            {t("stack.productivity")}
-          </h3>
-          <div className="flex w-full flex-wrap items-start justify-start gap-4">
-            <TechCard icon={icons.stackIcons.gitlab} label={t("stack.gitlab")} />
-            <TechCard icon={icons.stackIcons.github} label={t("stack.github")} />
-            <TechCard icon={icons.stackIcons.linear} label={t("stack.linear")} />
-            <TechCard icon={icons.stackIcons.slack} label={t("stack.slack")} />
-            <TechCard
-              icon={icons.stackIcons.visualstudiocode}
-              label={t("stack.visualStudioCode")}
-            />
-            <TechCard icon={icons.stackIcons.docker} label={t("stack.docker")} />
-            <TechCard icon={icons.stackIcons.notion} label={t("stack.notion")} />
-          </div>
-        </div>
-      </div>
-    </Layout>
-  );
+const Stack = () => {
+	const { t } = useTranslation();
+	return (
+		<Layout>
+			<div className="max-w-[1050px] space-y-6 h-full py-5">
+				<section className="w-full space-y-4">
+					<h1 className="text-5xl font-bold text-white">
+						{t("stack.title")}
+					</h1>
+					<p className=" text-gray-400">{t("stack.intro")}</p>
+				</section>
+				{stackData.map((section) => (
+					<div
+						key={section.titleKey}
+						className="space-y-4 border-l-2 border-gray-600 pl-4"
+					>
+						<h3 className={section.titleClass}>{t(section.titleKey)}</h3>
+						<div className="w-full gap-4 grid grid-cols-2  sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
+							{section.cards.map((card) => (
+								<TechCard
+									key={card.labelKey}
+									icon={card.icon}
+									label={t(card.labelKey)}
+								/>
+							))}
+						</div>
+					</div>
+				))}
+			</div>
+		</Layout>
+	);
 };
 export default Stack;
