@@ -24,24 +24,17 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div
-    ref={scrollableRef}
+      ref={scrollableRef}
       style={{
         backgroundImage:
           "radial-gradient(circle 1000px at top, rgba(120,119,198,0.3), rgba(20,20,20,0.3))",
       }}
-      className="relative flex h-screen w-full flex-col items-center justify-start gap-4 overflow-auto bg-black px-4 md:px-20 "
+      className="relative flex h-screen w-full flex-col items-center justify-start gap-4 overflow-auto bg-black px-4 md:px-20 pb-8"
     >
       <div className="sticky top-0 flex w-full justify-center items-center z-40 ">
-        <Navbar scrolled={ scrolled} />
+        <Navbar scrolled={scrolled} />
       </div>
-      <div
-        
-        className="p-10  w-full flex  justify-center relative"
-        style={{ flex: 1, height: "100%", width: "100%" }}
-      >
-        
-        {children}
-      </div>
+      <div className="p-5 w-full flex justify-center">{children}</div>
     </div>
   );
 };

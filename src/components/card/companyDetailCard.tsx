@@ -5,12 +5,17 @@ interface StackItem {
   label: string;
 }
 
+interface ListOfPositions {
+  position?: string;
+  listOfInformation: string[];
+}
+
 interface CompanyDetailCardProps {
   id?: string;
   companyName: string;
   otherInformation: string;
   companyIcon: JSX.Element;
-  listOfInformation: string[];
+  listOfPositions: ListOfPositions[];
   stack?: StackItem[];
 }
 
@@ -19,11 +24,11 @@ const CompanyDetailCard = ({
   companyName,
   otherInformation,
   companyIcon,
-  listOfInformation,
+  listOfPositions,
   stack,
 }: CompanyDetailCardProps) => {
   return (
-    <article id={id} className="flex flex-col space-y-2 border-t border-l border-gray-600 rounded-tl-lg pl-4 pt-2 ">
+    <article id={id} className="flex flex-col space-y-2 border-b border-l border-gray-600 rounded-bl-lg rounded-br-lg rounded-tr-lg px-4 py-4 shadow-sm shadow-gray-800">
       <div className="flex flex-wrap items-center gap-4">
         <div
           className="flex h-12 w-12 items-center justify-center  rounded-md p-1"
@@ -42,11 +47,17 @@ const CompanyDetailCard = ({
           </h3>
         </div>
       </div>
-      <ul className="flex flex-col pl-5 text-gray-200">
-        {listOfInformation.map((item) => (
-          <li className="list-disc">{item}</li>
-        ))}
-      </ul>
+      {listOfPositions.map((position, index) => (
+        <>
+        {position?.position && <label className="text-md font-i font-light text-gray-300">{position.position}</label>}
+        <ul className="flex flex-col pl-5 text-gray-200" key={position?.position ?? index}>
+          
+          {position.listOfInformation.map((item) => (
+            <li className="list-disc">{item}</li>
+          ))}
+        </ul>
+        </>
+      ))}
       {stack && (
         <>
           <h2 className="text-2xl font-semibold text-white">Stack</h2>

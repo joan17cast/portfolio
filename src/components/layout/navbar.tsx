@@ -15,11 +15,9 @@ const Navbar = ({ scrolled }: { scrolled: boolean }) => {
   return (
     <nav
       className={`flex  flex-row justify-center items-center w-full  p-4 transition-all duration-300 z-30  ${
-        scrolled ? "backdrop-blur-md" : ""
+        scrolled && "backdrop-blur-md shadow-lg" 
       }`}
-      style={{
-        boxShadow: scrolled ? "0 2px 16px 0 rgba(0,0,0,0.12)" : undefined,
-      }}
+      
     >
       <div className="flex w-full max-w-[1200px]">
       <div
