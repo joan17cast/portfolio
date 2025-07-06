@@ -50,23 +50,27 @@
     "github": "Github",
     "linear": "Linear",
     "slack": "Slack",
-    "visualStudioCode": "Visual Studio Code",
+    "visualStudioCode": "Visual Code",
     "docker": "Docker",
-    "notion": "Notion"
+    "notion": "Notion",
+    "flutter": "Flutter"
   },
   "workExperience": {
     "title": "Work experience",
     "cipher": {
       "companyName": "Cipher - Cibersecurity",
-      "otherInformation": "Frontend team lead, 2024 - present (Remote)",
-      "info1": "Participation in the development of a new cybersecurity platform (xMDR)",
-      "info2": "Active participation in the component library (Storybook)",
-      "info3": "Onboarding of new colleagues (Pair programming)",
-      "info4": "Participation in technical and architectural decisions of the project.",
-      "info5": "Onboarding of new colleagues (Pair programming).",
-      "info6": "Testing with Jest and Vitest.",
-      "info7": "Experience working with Scrum / AGILE methodology",
-      "info8": "Board, tasks and team management"
+      "otherInformation": "Frontend Team Lead, 2025 - present (Remote)",
+      "position1": "Frontend Team Lead, 2025 - present (Remote)",
+      "info1": "Management of the Frontend team",
+      "info2": "Involvement in technical and architectural project decisions",
+      "info3": "Experience working with the Scrum / AGILE methodology",
+      "info4": "Participation in the selection process of new employees.",
+      "position2": "Senior Frontend developer, 2024 - 2025 (Remote)",
+      "info5": "Participation in the development of a new cybersecurity platform (xMDR)",
+      "info6": "Contribution to the UI library (Storybook)",
+      "info7": "Onboarding of new colleagues (Pair programming)",
+      "info8": "Involvement in technical and architectural project decisions",
+      "info9": "Improve the typescript and linter setup"
     },
     "nexiona": {
       "companyName": "Nexiona IOT Consultan Company",
@@ -87,7 +91,8 @@
       "info2": "Creation and maintenance of a CRM dedicated to Customer Service (React JS)",
       "info3": "Creation and maintenance of more than 6 applications (React Native / NFC / BC/QR scan / Redsys)",
       "info4": "Creation and maintenance of more than 2 applications (Flutter)",
-      "info5": "Onboarding of new colleagues"
+      "info5": "Onboarding of new colleagues",
+      "info6": "Setup  of gitlab pipelines"
     },
     "clibb": {
       "companyName": "Clibb",

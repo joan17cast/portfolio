@@ -7,6 +7,7 @@ interface CompanyExperienceCardProps {
   icon: JSX.Element;
   time: string;
   id?: string; // Optional id for redirection
+
 }
 
 const CompanyExperienceCard = ({ company, description, icon, time, id }: CompanyExperienceCardProps) => {
@@ -21,9 +22,8 @@ const CompanyExperienceCard = ({ company, description, icon, time, id }: Company
   return (
     <figure
       className={clsx(
-        "relative mx-auto min-h-fit w-full  transform cursor-pointer overflow-hidden rounded-2xl p-4",
-        "transition-all duration-200 ease-in-out hover:scale-[103%]",
-        "transform-gpu bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        "relative mx-auto min-h-fit w-full  transform cursor-default overflow-hidden rounded-2xl p-4  bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        {"transition-all duration-200 ease-in-out hover:scale-[103%] cursor-pointer": id,}
       )}
       onClick={handleClick}
       style={id ? { cursor: "pointer" } : {}}
