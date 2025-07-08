@@ -46,7 +46,7 @@ const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
     <div
       key={name}
       className={clsx(
-        "group relative  flex flex-col justify-start overflow-hidden rounded-xl",
+        "h-max lg:h-full xl:h-max flex flex-col justify-start overflow-hidden rounded-xl",
         "transform-gpu bg-transparent [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
       )}
     >
@@ -60,7 +60,7 @@ const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
           </div>
           
         </section>
-        <div className="flex flex-col gap-2 sm:max-h-72 sm:overflow-y-auto px-2 ">
+        <div className="flex flex-col gap-2 h-full sm:overflow-y-auto px-2 sm:max-h-72 lg:max-h-80 xl:max-h-full">
           {workExperience.map((item) => (
             <CompanyExperienceCard {...item} key={item.company} />
           ))}

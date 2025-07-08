@@ -25,7 +25,7 @@ const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
     },
   });
 };
@@ -72,7 +72,7 @@ export default function BentoCardStack() {
   return (
     <div
       className={clsx(
-        "group relative flex min-h-96 flex-col justify-start overflow-hidden rounded-xl",
+        "group relative flex min-h-96 h-full flex-col justify-start overflow-hidden rounded-xl",
         "cursor-pointer transition-all duration-200 ease-in-out hover:scale-[103%]",
         "transform-gpu bg-transparent [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
         "relative flex w-full  items-center justify-center overflow-hidden rounded-lg",

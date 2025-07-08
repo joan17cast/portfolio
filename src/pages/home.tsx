@@ -16,18 +16,18 @@ const Home = () => {
       className="relative flex h-screen w-full flex-col items-center justify-start gap-4 overflow-auto bg-black px-4 md:px-20 "
     >
       <Navbar scrolled={false}/>
-      <section className="grid max-w-[1200px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <section className="grid max-w-[1200px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 h-full pb-4">
         <section className="col-span-1 flex flex-col justify-start gap-4 md:col-span-2 md:flex-row lg:col-span-1 lg:flex-col">
           <BentoCardExperience name={t("experience")} />
           <BentoCardEducation name={t("education")} />
         </section>
-        <div className="col-span-1 grid grid-cols-1 gap-4 md:col-span-2 md:grid-cols-2">
-          <section className="flex flex-col  justify-start gap-4">
+        <div className="col-span-1 grid grid-cols-1 gap-4 md:col-span-2 md:grid-cols-2 ">
+          <section className="flex flex-col  justify-start gap-4 h-full">
             <BentoCardContact />
             <BentoCardProjects />
           </section>
           <BentoCardStack />
-          <div className="relative col-span-1 flex w-full transform-gpu flex-col items-center justify-center overflow-hidden rounded-xl bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] md:col-span-2 ">
+          <div className="relative h-full  col-span-1 flex w-full transform-gpu flex-col items-center justify-center overflow-hidden rounded-xl bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] md:col-span-2 self-start ">
             <CompanySlider pauseOnHover className="[--duration:20s]">
               {companysData.map((company) => (
                 <CompanyCard
