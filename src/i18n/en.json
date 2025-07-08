@@ -61,7 +61,7 @@
       "companyName": "Cipher - Cibersecurity",
       "otherInformation": "Frontend Team Lead, 2025 - present (Remote)",
       "position1": "Frontend Team Lead, 2025 - present (Remote)",
-      "info1": "Management of the Frontend team",
+      "info1": "Management of the Frontend team (3) and design team (2)",
       "info2": "Involvement in technical and architectural project decisions",
       "info3": "Experience working with the Scrum / AGILE methodology",
       "info4": "Participation in the selection process of new employees.",
@@ -70,7 +70,8 @@
       "info6": "Contribution to the UI library (Storybook)",
       "info7": "Onboarding of new colleagues (Pair programming)",
       "info8": "Involvement in technical and architectural project decisions",
-      "info9": "Improve the typescript and linter setup"
+      "info9": "Improve the typescript and linter setup",
+      "info10": "Improved the board management and the dailys"
     },
     "nexiona": {
       "companyName": "Nexiona IOT Consultan Company",
@@ -92,7 +93,8 @@
       "info3": "Creation and maintenance of more than 6 applications (React Native / NFC / BC/QR scan / Redsys)",
       "info4": "Creation and maintenance of more than 2 applications (Flutter)",
       "info5": "Onboarding of new colleagues",
-      "info6": "Setup  of gitlab pipelines"
+      "info6": "Setup  of gitlab pipelines",
+      "info7": "Experience with Google Play Console / App Center / xCode "
     },
     "clibb": {
       "companyName": "Clibb",

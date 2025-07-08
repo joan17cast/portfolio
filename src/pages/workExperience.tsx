@@ -42,7 +42,8 @@ const WorkExperience = () => {
                   t("workExperience.cipher.info1"),
                   t("workExperience.cipher.info2"),
                   t("workExperience.cipher.info3"),
-                  t("workExperience.cipher.info4")
+                  t("workExperience.cipher.info4"),
+                  t("workExperience.cipher.info10"),
                 ]
               },
               {
@@ -53,7 +54,6 @@ const WorkExperience = () => {
                   t("workExperience.cipher.info7"),
                   t("workExperience.cipher.info8"),
                   t("workExperience.cipher.info9"),
-                  t("workExperience.cipher.info10")
                 ]
               }
             ]}
@@ -113,6 +113,7 @@ const WorkExperience = () => {
               t("workExperience.bonarea.info4"),
               t("workExperience.bonarea.info5"),
               t("workExperience.bonarea.info6"),
+              t("workExperience.bonarea.info7"),
             ]}]}
             stack={[
               { icon: icons.stackIcons.react, label: t("stack.react") },
