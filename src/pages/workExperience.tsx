@@ -24,11 +24,12 @@ const WorkExperience = () => {
   return (
     <Layout>
       <div className="flex flex-col w-full max-w-[1200px] space-y-6 ">
-        
-        
         <section className="w-full space-y-4">
           <h1 className="text-5xl font-bold text-white">{t("workExperience.title")}</h1>
         </section>
+        <p className="text-gray-400">
+          {t("workExperience.intro")}
+        </p>
         <div className="flex flex-col gap-4 pb-4">
           <CompanyDetailCard
             id="cipher"
