@@ -49,11 +49,14 @@ const CompanyDetailCard = ({
       </div>
       {listOfPositions.map((position, index) => (
         <>
-        {position?.position && <label className="text-md font-i font-light text-gray-300">{position.position}</label>}
+        {position?.position && <label className="text-md font-i font-light text-gray-300 pl-16" >{position.position}</label>}
         <ul className="flex flex-col pl-5 text-gray-200" key={position?.position ?? index}>
           
           {position.listOfInformation.map((item) => (
-            <li className="list-disc">{item}</li>
+            <div key={item} className="flex flex-row items-center gap-4">
+            <span className="h-[2px] min-w-2 w-2 ring-4 ring-slate-400/20 bg-slate-200  rounded-full"/>
+            <li className="list-none ">{item}</li>
+            </div>
           ))}
         </ul>
         </>
