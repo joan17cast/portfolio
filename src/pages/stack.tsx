@@ -112,9 +112,9 @@ const Stack = () => {
 		<Layout>
 			<div className="flex flex-col w-full max-w-[1200px] space-y-6 ">
 				<section className="w-full space-y-4">
-					<h1 className="text-5xl font-bold text-white">
+					<h2 className="text-5xl font-bold text-white">
 						{t("stack.title")}
-					</h1>
+					</h2>
 					<p className=" text-gray-400">{t("stack.intro")}</p>
 				</section>
 				{stackData.map((section) => (
