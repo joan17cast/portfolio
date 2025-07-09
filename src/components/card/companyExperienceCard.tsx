@@ -15,7 +15,11 @@ const CompanyExperienceCard = ({ company, description, icon, time, id }: Company
   // Handle card click to redirect if id is provided
   const handleClick = () => {
     if (id) {
-      void navigate({ to: "/work-experience", search: {}, hash: id });
+      if (id === "cipher") {
+        void navigate({ to: "/work-experience", search: {} });
+      } else {
+          void navigate({ to: "/work-experience", search: {}, hash: id });
+        }
     }
   };
 
