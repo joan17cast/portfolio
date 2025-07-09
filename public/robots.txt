@@ -1,0 +1,18 @@
+# robots.txt for Joan Peruchet Portfolio
+User-agent: *
+Allow: /
+
+# Disallow crawling of sensitive or unnecessary files
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /README.md
+Disallow: /package.json
+Disallow: /pnpm-lock.yaml
+Disallow: /tsconfig.json
+Disallow: /tsconfig.node.json
+Disallow: /vite.config.ts
+Disallow: /postcss.config.js
+Disallow: /prettier.config.js
+Disallow: /tailwind.config.ts
+
+Sitemap: https://joanperuchet.com/sitemap.xml
