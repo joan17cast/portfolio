@@ -41,32 +41,38 @@ const CompanyDetailCard = ({
           </span>
         </div>
         <div>
-          <h3 className="text-xl font-bold text-white">{companyName}</h3>
+          <h2 className="text-xl font-bold text-white">{companyName}</h2>
           <h3 className="text-md font-i font-light text-gray-300">
             {otherInformation}
           </h3>
         </div>
       </div>
       {listOfPositions.map((position, index) => (
-        <>
-        {position?.position && <label className="text-md font-i font-light text-gray-300 pl-16" >{position.position}</label>}
-        <ul className="flex flex-col pl-5 text-gray-200" key={position?.position ?? index}>
-          
-          {position.listOfInformation.map((item) => (
-            <div key={item} className="flex flex-row items-center gap-4">
-            <span className="h-[2px] min-w-2 w-2 ring-4 ring-slate-400/20 bg-slate-200  rounded-full"/>
-            <li className="list-none ">{item}</li>
-            </div>
-          ))}
-        </ul>
-        </>
+        <div key={position.position ?? index}>
+          {position?.position && (
+            <label className="text-md font-i font-light text-gray-300 pl-16">
+              {position.position}
+            </label>
+          )}
+          <ul className="flex flex-col pl-5 text-gray-200">
+            {position.listOfInformation.map((item, infoIdx) => (
+              <li
+                key={position.position ? `${position.position}-${infoIdx}` : infoIdx}
+                className="list-none flex flex-row items-center gap-4"
+              >
+                <span className="h-[2px] min-w-2 w-2 ring-4 ring-slate-400/20 bg-slate-200 rounded-full" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
       {stack && (
         <>
           <h2 className="text-2xl font-semibold text-white">Stack</h2>
-          <div className=" w-full gap-4 grid grid-cols-2  sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">   
+          <div className=" w-full gap-4 grid grid-cols-2  sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
             {stack.map((item) => (
-              <TechCard {...item} />
+              <TechCard {...item} key={item.label} />
             ))}
           </div>
         </>
