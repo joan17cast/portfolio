@@ -41,11 +41,11 @@ const Navbar = ({ scrolled }: { scrolled: boolean }) => {
               onComplete={handleTypingComplete}
             />
           ) : (
-            <h1 className="text-3xl font-bold text-black dark:text-white">
+            <h1 className="text-xl font-bold text-black dark:text-white sm:text-3xl" >
               Joan Peruchet Castells
             </h1>
           )}
-          <p className="text-lg text-gray-400">
+          <p className="text-sm text-gray-400 sm:text-lg">
             Frontend Team Lead at Cipher Prosegur
           </p>
         </div>
