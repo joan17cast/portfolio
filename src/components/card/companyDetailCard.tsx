@@ -58,9 +58,9 @@ const CompanyDetailCard = ({
             {position.listOfInformation.map((item, infoIdx) => (
               <li
                 key={position.position ? `${position.position}-${infoIdx}` : infoIdx}
-                className="list-none flex flex-row items-center gap-4"
+                className="list-none flex flex-row items-start gap-4 "
               >
-                <span className="h-[2px] min-w-2 w-2 ring-4 ring-slate-400/20 bg-slate-200 rounded-full" />
+                <span className="h-[2px] min-w-2 w-2 ring-4 ring-slate-400/20 bg-slate-200 rounded-full mt-3" />
                 <span>{item}</span>
               </li>
             ))}
