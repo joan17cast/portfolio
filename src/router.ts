@@ -1,5 +1,4 @@
 import Home from "@/pages/home";
-import NotFound from "@/pages/notFound";
 import Stack from "@/pages/stack";
 import WorkExperience from "@/pages/workExperience";
 import {
@@ -30,16 +29,27 @@ const workExperienceRoute = createRoute({
 
 const notFoundRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "$",
-  component: NotFound,
+  path: "*",
+  component: Home,
+});
+
+const workExperienceNotFoundRoute = createRoute({
+  getParentRoute: () => workExperienceRoute,
+  path: "*",
+  component: WorkExperience,
+});
+
+const stackNotFoundRoute = createRoute({
+  getParentRoute: () => stackRoute,
+  path: "*",
+  component: Stack,
 });
 
 const routeTree = rootRoute.addChildren([
   homeRoute,
-  stackRoute,
-  workExperienceRoute,
+  stackRoute.addChildren([stackNotFoundRoute]),
+  workExperienceRoute.addChildren([workExperienceNotFoundRoute]),
   notFoundRoute,
 ]);
 
 export const router = createRouter({ routeTree });
-
