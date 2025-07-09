@@ -37,18 +37,18 @@ export default function BentoCardProjects() {
         </div>
         <div className="flex flex-row items-center gap-4">
           <a
-            className="h-5 w-5 transform cursor-pointer transition-transform duration-300 hover:scale-110"
+            className="transform cursor-pointer transition-transform duration-300 hover:scale-110"
             target="_blank"
             href="https://www.linkedin.com/in/joan-peruchet-144b5759/"
           >
-            <img src={linkedinLogo} alt="LinkedIn" />
+            <img src={linkedinLogo} alt="LinkedIn" className="w-5 h-5 min-w-5 object-contain" />
           </a>
           <a
-            className="h-5 w-5 transform cursor-pointer transition-transform duration-300 hover:scale-110"
+            className="transform cursor-pointer transition-transform duration-300 hover:scale-110"
             target="_blank"
             href="https://github.com/joan17cast"
           >
-            <img src={githubLogo} alt="GitHub" />
+            <img src={githubLogo} alt="GitHub" className="w-5 min-w-5 h-5 object-contain" />
           </a>
           <div className="flex  flex-row items-center justify-start gap-2 rounded-md px-2 ring-1 ring-gray-700">
             <a
@@ -57,7 +57,7 @@ export default function BentoCardProjects() {
             >
               <img src={gmailLogo} alt="Gmail" />
             </a>
-            <span className="text-white">joan17cast@gmail.com</span>
+            <span className="text-white text-sm">joan17cast@gmail.com</span>
           </div>
         </div>
       </div>
