@@ -1,51 +1,14 @@
-import { useEffect, useMemo, useState } from "react";
 import { iconStack } from "@/utils/staticContent";
 import { useNavigate } from "@tanstack/react-router";
 import clsx from "clsx";
-import {
-  fetchSimpleIcons,
-  renderSimpleIcon,
-  type SimpleIcon,
-} from "react-icon-cloud";
 
+import { icons } from "@/utils/icons";
 import OrbitingCircles from "../animations/orbitingCircles";
 
-const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
-  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
-  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
-  const minContrastRatio = theme === "dark" ? 2 : 1.2;
-
-  return renderSimpleIcon({
-    icon,
-    bgHex,
-    fallbackHex,
-    minContrastRatio,
-    size: 42,
-    aProps: {
-      href: undefined,
-      target: undefined,
-      rel: undefined,
-      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
-    },
-  });
-};
-
-type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
-
 export default function BentoCardStack() {
-  const [data, setData] = useState<IconData | null>(null);
   const navigate = useNavigate();
-  useEffect(() => {
-    void fetchSimpleIcons({ slugs: iconStack }).then(setData);
-  }, []);
 
-  const renderedIcons = useMemo(() => {
-    if (!data) return null;
-
-    return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, "dark"),
-    );
-  }, [data]);
+  const renderedIcons = (iconStack as Array<keyof typeof icons.stackIcons>).map((slug) => icons.stackIcons[slug]);
 
   const radii = [50, 90, 130, 170];
   const iconDistribution = [
