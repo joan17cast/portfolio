@@ -1,7 +1,7 @@
 import bonareaLogo from "@/assets/images/companies/bonarea.png";
 import clibbLogo from "@/assets/images/companies/clibb.webp";
-import nexionaLogo from "@/assets/images/companies/nexiona.png";
-import cipherLogo from "@/assets/images/companies/cipher.png";
+import nexionaLogo from "@/assets/images/companies/nexiona.webp";
+import cipherLogo from "@/assets/images/companies/cipher.webp";
 import { CompanyDetailCard } from "@/components/card";
 import { Layout } from "@/components/layout";
 import { icons } from "@/utils/icons";

@@ -1,11 +1,11 @@
-import bonareaImg from "@/assets/images/brands/bonarea.png";
-import cipherImg from "@/assets/images/brands/cipher.png";
-import dammImg from "@/assets/images/brands/damm.png";
-import freseniusImg from "@/assets/images/brands/fresenius.png";
-import grifolsImg from "@/assets/images/brands/grifols.png";
-import puigImg from "@/assets/images/brands/puig.png";
-import rdtImg from "@/assets/images/brands/rdt.png";
-import trgImg from "@/assets/images/brands/trg.png";
+import bonareaImg from "@/assets/images/brands/bonarea.webp";
+import cipherImg from "@/assets/images/brands/cipher.webp";
+import dammImg from "@/assets/images/brands/damm.webp";
+import freseniusImg from "@/assets/images/brands/fresenius.webp";
+import grifolsImg from "@/assets/images/brands/grifols.webp";
+import puigImg from "@/assets/images/brands/puig.webp";
+import rdtImg from "@/assets/images/brands/rdt.webp";
+import trgImg from "@/assets/images/brands/trg.webp";
 
 export const iconStack = [
   "typescript",

@@ -1,7 +1,7 @@
 import bonareaLogo from "@/assets/images/companies/bonarea.png";
 import clibbLogo from "@/assets/images/companies/clibb.webp";
-import nexionaLogo from "@/assets/images/companies/nexiona.png";
-import cipherLogo from "@/assets/images/companies/cipher.png";
+import nexionaLogo from "@/assets/images/companies/nexiona.webp";
+import cipherLogo from "@/assets/images/companies/cipher.webp";
 import CompanyExperienceCard from "@/components/card/companyExperienceCard";
 import { icons } from "@/utils/icons";
 import clsx from "clsx";
@@ -54,9 +54,9 @@ const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
         <section className="flex flex-row items-center justify-between gap-4 pb-4 px-3">
           <div className="flex flex-row items-center justify-start gap-2">
             <div className=" text-gray-300">{icons.workExperience}</div>
-            <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
+            <h2 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
               {name}
-            </h3>
+            </h2>
           </div>
           
         </section>
