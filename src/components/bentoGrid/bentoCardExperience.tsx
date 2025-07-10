@@ -47,10 +47,10 @@ const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
       key={name}
       className={clsx(
         "h-max lg:h-full xl:h-max flex flex-col justify-start overflow-hidden rounded-xl",
-        "transform-gpu bg-transparent [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        "bg-transparent [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
       )}
     >
-      <div className="  flex transform-gpu flex-col gap-1 px-2 py-4 transition-all duration-300 ">
+      <div className="  flex flex-col gap-1 px-2 py-4 transition-all duration-300 ">
         <section className="flex flex-row items-center justify-between gap-4 pb-4 px-3">
           <div className="flex flex-row items-center justify-start gap-2">
             <div className=" text-gray-300">{icons.workExperience}</div>

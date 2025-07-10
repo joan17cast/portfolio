@@ -37,7 +37,7 @@ export default function BentoCardStack() {
       className={clsx(
         "group relative flex min-h-96 h-full flex-col justify-start overflow-hidden rounded-xl",
         "cursor-pointer transition-all duration-200 ease-in-out hover:scale-[103%]",
-        "transform-gpu bg-transparent [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        "bg-transparent [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
         "relative flex w-full  items-center justify-center overflow-hidden rounded-lg",
       )}
       onClick={() => navigate({ to: "/stack" })}
