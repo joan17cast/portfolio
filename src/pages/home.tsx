@@ -4,7 +4,7 @@ import { CompanyCard } from "@/components/card";
 import { CompanySlider } from "@/components/slider";
 import { companysData } from "@/utils/staticContent";
 import { useTranslation } from "react-i18next";
-
+import Marquee from "react-fast-marquee";
 const Home = () => {
   const { t } = useTranslation();
   return (
@@ -13,7 +13,9 @@ const Home = () => {
         backgroundImage:
           "radial-gradient(circle 1000px at top, rgba(120,119,198,0.3), rgba(20,20,20,0.3))",
       }}
-      className="relative flex h-screen w-full flex-col items-center justify-start gap-4 overflow-auto bg-black px-4 md:px-20 "
+      className="relative flex min-h-screen w-full flex-col items-center justify-start gap-4 bg-black px-4 pb-4 md:px-20"
+
+
     >
       <Navbar scrolled={false}/>
       <section className="grid max-w-[1200px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 h-full pb-4">
@@ -27,12 +29,12 @@ const Home = () => {
             <BentoCardProjects />
           </section>
           <BentoCardStack />
-          <div className="relative h-full  col-span-1 flex w-full transform-gpu flex-col items-center justify-center overflow-hidden rounded-xl bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] md:col-span-2 self-start ">
+          <div className="h-full gap-1 col-span-1 flex w-full  flex-col items-center justify-center overflow-hidden rounded-xl bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] md:col-span-2 self-start ">
             <CompanySlider pauseOnHover className="[--duration:20s]">
               {companysData.map((company) => (
                 <CompanyCard
                   key={company.alt}
-                  icon={<img src={company.icon} alt={company.alt} />}
+                  icon={<img src={company.icon} alt={company.alt} className="h-20 w-20 object-contain"/>}
                   url={company.url}
                 />
               ))}
@@ -41,7 +43,7 @@ const Home = () => {
               {companysData.map((company) => (
                 <CompanyCard
                   key={company.alt}
-                  icon={<img src={company.icon} alt={company.alt} />}
+                  icon={<img src={company.icon} alt={company.alt} className="h-20 w-20 object-contain"/>}
                   url={company.url}
                 />
               ))}
