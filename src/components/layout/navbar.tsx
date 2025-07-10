@@ -3,6 +3,7 @@ import { TypingAnimation } from "@/components/animations";
 import { useTranslation } from "react-i18next";
 import { useTypingAnimationStore } from "@/store/typingAnimationStore";
 import React from "react";
+import { icons } from "@/utils/icons";
 
 const Navbar = ({ scrolled }: { scrolled: boolean }) => {
   const { i18n } = useTranslation();
@@ -21,12 +22,15 @@ const Navbar = ({ scrolled }: { scrolled: boolean }) => {
     >
       <div className="flex w-full max-w-[1200px]">
       <div
-        className="group relative  flex w-full max-w-[1200px] gap-4 flex-col sm:flex-row items-start cursor-pointer    "
+        className="group relative  flex w-full max-w-[1200px] gap-4 flex-row sm:flex-row items-start cursor-pointer    "
         onClick={() => {
           window.history.pushState({}, '', '/');
           window.dispatchEvent(new PopStateEvent('popstate'));
         }}
       >
+        <div className="sm:hidden text-slate-100 h-full flex items-center justify-center">
+          {icons.home}
+        </div>
         <div className="absolute left-0 top-0 h-16 w-16 rounded-full bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-45 blur transition duration-500 group-hover:opacity-70 pointer-events-none hidden sm:flex" />
         <img
           alt="Profile"
@@ -36,7 +40,7 @@ const Navbar = ({ scrolled }: { scrolled: boolean }) => {
         <div className="relative z-10">
           {!hasSeenTyping ? (
             <TypingAnimation
-              className="text-3xl font-bold text-black dark:text-white"
+              className="text-xl font-bold text-black dark:text-white sm:text-3xl"
               text="Joan Peruchet Castells"
               onComplete={handleTypingComplete}
             />
