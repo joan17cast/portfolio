@@ -2,21 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #212020;
+  background-image: radial-gradient(
+    circle 1000px at top,
+    rgba(120, 119, 198, 0.3),
+    rgba(20, 20, 20, 0.3)
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* Chrome, Edge, and Safari  scroll*/
 *::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #373737;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #747474;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  *::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
   }
-  
-  
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: #373737;
-    border-radius: 20px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #747474;
-    border-radius: 20px;
-  }
-  
+}
