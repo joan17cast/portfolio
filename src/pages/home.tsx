@@ -4,7 +4,6 @@ import { CompanyCard } from "@/components/card";
 import { CompanySlider } from "@/components/slider";
 import { companysData } from "@/utils/staticContent";
 import { useTranslation } from "react-i18next";
-import Marquee from "react-fast-marquee";
 const Home = () => {
   const { t } = useTranslation();
   return (
