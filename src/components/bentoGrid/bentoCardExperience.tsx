@@ -14,7 +14,7 @@ const workExperience = [
   {
     id: "cipher",
     company: "Cipher Prosegur",
-    description: "Frontend team lead",
+    description: "Frontend Team Lead",
     time: "2024 - Present (Remote)",
     icon: <img src={cipherLogo} alt="Cipher Prosegur" />,
   },
@@ -34,8 +34,8 @@ const workExperience = [
   },
   {
     id: "clibb",
-    company: "Clibb Software solutions",
-    description: "Junior developer",
+    company: "Clibb Software Solutions",
+    description: "Junior Developer",
     time: "2016 - 2017 (Lleida)",
     icon: <img src={clibbLogo} alt="Clibb Software solutions" />,
   },
