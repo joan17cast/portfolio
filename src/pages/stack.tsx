@@ -115,7 +115,7 @@ const Stack = () => {
 					<h2 className="text-5xl font-bold text-white">
 						{t("stack.title")}
 					</h2>
-					<p className=" text-gray-400">{t("stack.intro")}</p>
+					<p className=" text-gray-400 text-justify ">{t("stack.intro")}</p>
 				</section>
 				{stackData.map((section) => (
 					<div
