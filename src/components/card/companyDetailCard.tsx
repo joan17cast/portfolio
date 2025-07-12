@@ -28,7 +28,13 @@ const CompanyDetailCard = ({
   stack,
 }: CompanyDetailCardProps) => {
   return (
-    <article id={id} className="flex flex-col space-y-2 border-b border-l border-gray-600 rounded-bl-lg rounded-br-lg rounded-tr-lg px-4 py-4 shadow-sm shadow-gray-800">
+    <div className="w-full flex flex-row items-start relative">
+      <div className="flex flex-col items-center h-full ">
+        <div className="h-1 ring-slate-100 w-3 rounded-full ring-4 bg-slate-400/20 mt-10"/>
+        <div className="h-full bg-gradient-to-b from-slate-100 w-[3px]  "/>
+      </div>
+    <article id={id} className="flex flex-col space-y-2 rounded-tr-lg px-4 py-4 shadow-sm w-full">
+     
       <div className="flex flex-wrap items-center gap-4">
         <div
           className="flex h-12 w-12 items-center justify-center  rounded-md p-1"
@@ -41,8 +47,8 @@ const CompanyDetailCard = ({
           </span>
         </div>
         <div>
-          <h2 className="text-xl font-bold text-white">{companyName}</h2>
-          <h3 className="text-md font-i font-light text-gray-300">
+          <h2 className="text-lg font-bold text-white sm:text-xl">{companyName}</h2>
+          <h3 className="text-xs font-i font-light text-gray-300 sm:text-md">
             {otherInformation}
           </h3>
         </div>
@@ -50,7 +56,7 @@ const CompanyDetailCard = ({
       {listOfPositions.map((position, index) => (
         <div key={position.position ?? index}>
           {position?.position && (
-            <label className="text-md font-i font-light text-gray-300 pl-16">
+            <label className="text-xs font-i font-light text-gray-300 sm:text-md sm:pl-16 pb-4s">
               {position.position}
             </label>
           )}
@@ -78,6 +84,7 @@ const CompanyDetailCard = ({
         </>
       )}
     </article>
+    </div>
   );
 };
 

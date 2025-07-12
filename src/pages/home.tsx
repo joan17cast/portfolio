@@ -2,7 +2,7 @@ import Navbar from "@/components/layout/navbar";
 import { BentoCardContact, BentoCardEducation, BentoCardExperience, BentoCardProjects, BentoCardStack, } from "@/components/bentoGrid";
 import { CompanyCard } from "@/components/card";
 import { CompanySlider } from "@/components/slider";
-import { companysData } from "@/utils/staticContent";
+import { companyListData, companyListData2 } from "@/utils/staticContent";
 import { useTranslation } from "react-i18next";
 const Home = () => {
   const { t } = useTranslation();
@@ -12,7 +12,7 @@ const Home = () => {
         backgroundImage:
           "radial-gradient(circle 1000px at top, rgba(120,119,198,0.3), rgba(20,20,20,0.3))",
       }}
-      className="relative flex min-h-screen w-full flex-col items-center justify-start gap-4 bg-black px-4 pb-4 md:px-20"
+      className="relative flex min-h-screen w-full flex-col items-center justify-start gap-1 bg-black px-4  md:px-20"
 
 
     >
@@ -28,21 +28,21 @@ const Home = () => {
             <BentoCardProjects />
           </section>
           <BentoCardStack />
-          <div className="h-full gap-1 col-span-1 flex w-full  flex-col items-center justify-center overflow-hidden rounded-xl bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] md:col-span-2 self-start ">
+          <div className="h-full py-6  gap-6 col-span-1 flex w-full  flex-col items-center justify-center overflow-hidden rounded-xl bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] md:col-span-2 self-start ">
             <CompanySlider pauseOnHover className="[--duration:20s]">
-              {companysData.map((company) => (
+              {companyListData.map((company) => (
                 <CompanyCard
                   key={company.alt}
-                  icon={<img src={company.icon} alt={company.alt} className="h-20 w-20 object-contain"/>}
+                  icon={<img src={company.icon} alt={company.alt} className="h-7 w-20 object-contain"/>}
                   url={company.url}
                 />
               ))}
             </CompanySlider>
             <CompanySlider pauseOnHover className="[--duration:20s]" reverse>
-              {companysData.map((company) => (
+              {companyListData2.map((company) => (
                 <CompanyCard
                   key={company.alt}
-                  icon={<img src={company.icon} alt={company.alt} className="h-20 w-20 object-contain"/>}
+                  icon={<img src={company.icon} alt={company.alt} className="h-7 w-20 object-contain"/>}
                   url={company.url}
                 />
               ))}

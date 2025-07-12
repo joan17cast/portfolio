@@ -34,7 +34,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="sticky top-0 flex w-full justify-center items-center z-40 ">
         <Navbar scrolled={scrolled} />
       </div>
-      <div className="p-5 w-full flex justify-center">{children}</div>
+      <div className="p-2 sm:p-5 w-full flex justify-center">{children}</div>
     </div>
   );
 };

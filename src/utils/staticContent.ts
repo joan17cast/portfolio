@@ -37,27 +37,7 @@ export const iconStack = [
   "figma",
 ];
 
-export const companysData = [
-  {
-    icon: cipherImg,
-    url: "https://cipher.com/",
-    alt: "Cipher",
-  },
-  {
-    icon: grifolsImg,
-    url: "https://www.grifols.com/",
-    alt: "Grifols",
-  },
-  {
-    icon: rdtImg,
-    url: "https://www.tubosreunidosgroup.com/rdt-usa/",
-    alt: "RDT",
-  },
-  {
-    icon: dammImg,
-    url: "https://www.damm.com/",
-    alt: "Damm",
-  },
+export const companyListData = [
   {
     icon: bonareaImg,
     url: "https://www.bonarea.com/",
@@ -77,5 +57,27 @@ export const companysData = [
     icon: puigImg,
     url: "https://www.puig.com/",
     alt: "Puig",
+  },
+];
+export const companyListData2 = [
+  {
+    icon: cipherImg,
+    url: "https://cipher.com/",
+    alt: "Cipher",
+  },
+  {
+    icon: grifolsImg,
+    url: "https://www.grifols.com/",
+    alt: "Grifols",
+  },
+  {
+    icon: rdtImg,
+    url: "https://www.tubosreunidosgroup.com/rdt-usa/",
+    alt: "RDT",
+  },
+  {
+    icon: dammImg,
+    url: "https://www.damm.com/",
+    alt: "Damm",
   },
 ];

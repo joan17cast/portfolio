@@ -11,7 +11,7 @@ const CompanyCard = ({ icon, url }: CompanyCardProps) => {
       href={url}
       target="_blank"
       className={clsx(
-        "mx-auto min-h-fit min-w-44  cursor-pointer overflow-hidden rounded-2xl px-4",
+        "mx-auto min-h-fit min-w-44  cursor-pointer overflow-hidden rounded-2xl px-4 flex items-center justify-center",
         "transition-all duration-200 ease-in-out hover:scale-[103%]",
       )}
     >
