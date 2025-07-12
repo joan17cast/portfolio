@@ -48,7 +48,7 @@ const CompanyDetailCard = ({
         </div>
         <div>
           <h2 className="text-lg font-bold text-white sm:text-xl">{companyName}</h2>
-          <h3 className="text-xs font-i font-light text-gray-300 sm:text-md">
+          <h3 className="text-xs font-i font-light text-gray-300 sm:text-base">
             {otherInformation}
           </h3>
         </div>
@@ -56,7 +56,7 @@ const CompanyDetailCard = ({
       {listOfPositions.map((position, index) => (
         <div key={position.position ?? index}>
           {position?.position && (
-            <label className="text-xs font-i font-light text-gray-300 sm:text-md sm:pl-16 pb-4s">
+            <label className="text-xs font-i font-light text-gray-300 sm:text-base sm:pl-16 pb-4s">
               {position.position}
             </label>
           )}
