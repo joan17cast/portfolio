@@ -54,7 +54,7 @@ const BentoCardExperience = ({ name }: BentoCardExperienceProps) => {
         <section className="flex flex-row items-center justify-between gap-4 pb-4 px-3">
           <div className="flex flex-row items-center justify-start gap-2">
             <div className=" text-gray-300">{icons.workExperience}</div>
-            <h2 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
+            <h2 className="text-xl font-semibold  text-neutral-300">
               {name}
             </h2>
           </div>

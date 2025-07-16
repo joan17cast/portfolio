@@ -20,7 +20,7 @@ export default function BentoCardProjects() {
         <div className="flex flex-row items-center justify-between gap-4 pb-4">
           <div className="flex flex-row gap-2">
             <div className=" text-gray-300">{icons.contacts}</div>
-            <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
+            <h3 className="text-xl font-semibold  text-neutral-300">
               {t("contact")}
             </h3>
           </div>

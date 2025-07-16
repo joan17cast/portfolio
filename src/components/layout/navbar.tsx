@@ -40,12 +40,12 @@ const Navbar = ({ scrolled }: { scrolled: boolean }) => {
         <div className="relative z-10">
           {!hasSeenTyping ? (
             <TypingAnimation
-              className="text-xl font-bold text-black dark:text-white sm:text-3xl"
+              className="text-xl font-bold  text-white sm:text-3xl"
               text="Joan Peruchet Castells"
               onComplete={handleTypingComplete}
             />
           ) : (
-            <h1 className="text-xl font-bold text-black dark:text-white sm:text-3xl" >
+            <h1 className="text-xl font-bold  text-white sm:text-3xl" >
               Joan Peruchet Castells
             </h1>
           )}
