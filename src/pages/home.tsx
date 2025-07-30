@@ -10,7 +10,7 @@ const Home = () => {
     <div
       style={{
         backgroundImage:
-          "radial-gradient(circle 1000px at top, rgba(120,119,198,0.3), rgba(20,20,20,0.3))",
+          "radial-gradient(circle 1000px at top, rgba(166, 166, 163, 0.3), rgba(20,20,20,0.3))",
       }}
       className="relative flex min-h-screen w-full flex-col items-center justify-start gap-1 bg-black px-4  md:px-20"
 

@@ -6,7 +6,7 @@ body {
   background-color: #212020;
   background-image: radial-gradient(
     circle 1000px at top,
-    rgba(120, 119, 198, 0.3),
+    rgba(166, 166, 163, 0.3),
     rgba(20, 20, 20, 0.3)
   );
   background-attachment: fixed;

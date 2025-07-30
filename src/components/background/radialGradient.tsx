@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { type CSSProperties } from "react";
 
 type Type = "circle" | "ellipse";
 
@@ -24,8 +24,8 @@ interface RadialProps {
 
 const RadialGradient = ({
   type = "circle",
-  from = "rgba(120,119,198,0.3)",
-  to = "hsla(0, 0%, 0%, 0)",
+  from = "rgba(166, 166, 163, 0.3)",
+  to = "rgba(20,20,20,0.3)",
   size = 300,
   origin = "center",
   className,

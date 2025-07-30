@@ -31,7 +31,7 @@ const Navbar = ({ scrolled }: { scrolled: boolean }) => {
         <div className="sm:hidden text-slate-100 h-full flex items-center justify-center">
           {icons.home}
         </div>
-        <div className="absolute left-0 top-0 h-16 w-16 rounded-full bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-45 blur transition duration-500 group-hover:opacity-70 pointer-events-none hidden sm:flex" />
+        <div className="absolute left-0 top-0 h-16 w-16 rounded-full bg-gradient-to-r from-rose-400 via-orange-300 to-red-300 opacity-45 blur transition duration-500 group-hover:opacity-70 pointer-events-none hidden sm:flex" />
         <img
           alt="Profile"
           src={profileImage}

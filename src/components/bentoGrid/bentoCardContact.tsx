@@ -25,7 +25,7 @@ export default function BentoCardProjects() {
             </h3>
           </div>
           <div className="group relative cursor-pointer ">
-            <div className="absolute -inset-1 cursor-pointer rounded-lg bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-45 blur transition duration-500 group-hover:opacity-70" />
+            <div className="absolute -inset-1 cursor-pointer rounded-lg bg-gradient-to-r from-rose-400 via-orange-300 to-red-300 opacity-45 blur transition duration-500 group-hover:opacity-70" />
             <a
               href={ i18n.language === 'es' ? cvEsPDF : cvEnPDF }
               download={i18n.language === 'es' ? "CV_Joan_Peruchet_ES.pdf" : "CV_Joan_Peruchet_EN.pdf"}
