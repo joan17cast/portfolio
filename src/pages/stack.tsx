@@ -72,7 +72,7 @@ const stackData = [
 			{ icon: icons.stackIcons.figma, labelKey: "stack.figma" },
 			{ icon: icons.stackIcons.photoshop, labelKey: "stack.photoshop" },
 		],
-		titleClass: "text-xl font-semibold text-white",
+		titleClass: "text-xl font-bold text-white",
 	},
 	{
 		titleKey: "stack.cloud",
@@ -80,7 +80,7 @@ const stackData = [
 			{ icon: icons.stackIcons.rancher, labelKey: "stack.rancher" },
 			{ icon: icons.stackIcons.portainer, labelKey: "stack.portainer" },
 		],
-		titleClass: "text-xl font-semibold text-white",
+		titleClass: "text-xl font-bold text-white",
 	},
 	{
 		titleKey: "stack.mobileDevelopment",
@@ -89,7 +89,7 @@ const stackData = [
 			{ icon: icons.stackIcons.flutter, labelKey: "stack.flutter" },
 			{ icon: icons.stackIcons.androidstudio, labelKey: "stack.androidStudio" },
 		],
-		titleClass: "text-xl font-semibold text-white",
+		titleClass: "text-xl font-bold text-white",
 	},
 	{
 		titleKey: "stack.productivity",
@@ -102,12 +102,36 @@ const stackData = [
 			{ icon: icons.stackIcons.docker, labelKey: "stack.docker" },
 			{ icon: icons.stackIcons.notion, labelKey: "stack.notion" },
 		],
-		titleClass: "text-xl font-semibold text-white",
+		titleClass: "text-xl font-bold text-white",
 	},
 ];
 
+interface StackSection {
+	titleKey: string;
+	cards: { icon: JSX.Element; labelKey: string }[];
+	titleClass: string;
+}
+
 const Stack = () => {
 	const { t } = useTranslation();
+
+	// Group sections into timeline nodes: a new node (with its own dot) starts
+	// at every `font-bold` title, and the following non-bold sections are rendered
+	// as continuous sub-items sharing the same timeline line.
+	const groups: { title: StackSection; items: StackSection[] }[] = [];
+	for (const section of stackData) {
+		if (section.titleClass.includes("font-bold")) {
+			groups.push({ title: section, items: [] });
+		} else {
+			const lastGroup = groups[groups.length - 1];
+			if (lastGroup) {
+				lastGroup.items.push(section);
+			} else {
+				groups.push({ title: section, items: [] });
+			}
+		}
+	}
+
 	return (
 		<Layout>
 			<div className="flex flex-col w-full max-w-[1200px] space-y-6 ">
@@ -117,23 +141,52 @@ const Stack = () => {
 					</h2>
 					<p className=" text-gray-400 text-justify ">{t("stack.intro")}</p>
 				</section>
-				{stackData.map((section) => (
-					<div
-						key={section.titleKey}
-						className="space-y-4  pl-4 border-b border-l border-gray-600 rounded-bl-lg rounded-br-lg rounded-tr-lg px-4 py-4 shadow-sm shadow-gray-800"
-					>
-						<h3 className={section.titleClass}>{t(section.titleKey)}</h3>
-						<div className="w-full gap-4 grid grid-cols-2  sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
-							{section.cards.map((card) => (
-								<TechCard
-									key={card.labelKey}
-									icon={card.icon}
-									label={t(card.labelKey)}
-								/>
-							))}
+				<div className="flex flex-col gap-4 pb-4">
+					{groups.map((group) => (
+						<div
+							key={group.title.titleKey}
+							className="w-full flex flex-row items-start relative"
+						>
+							<div className="flex flex-col items-center h-full ">
+								<div className="h-1 ring-slate-100 w-3 rounded-full ring-4 bg-slate-400/20 mt-7" />
+								<div className="h-full bg-gradient-to-b from-slate-100 w-[3px] " />
+							</div>
+							<article className="flex flex-col space-y-2 rounded-tr-lg px-4 py-4 shadow-sm w-full">
+								<h3 className={group.title.titleClass}>
+									{t(group.title.titleKey)}
+								</h3>
+								<div className="w-full gap-4 grid grid-cols-2  sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
+									{group.title.cards.map((card) => (
+										<TechCard
+											key={card.labelKey}
+											icon={card.icon}
+											label={t(card.labelKey)}
+										/>
+									))}
+								</div>
+								{group.items.map((item) => (
+									<div
+										key={item.titleKey}
+										className="flex flex-col space-y-2 pt-6"
+									>
+										<h3 className={item.titleClass}>
+											{t(item.titleKey)}
+										</h3>
+										<div className="w-full gap-4 grid grid-cols-2  sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
+											{item.cards.map((card) => (
+												<TechCard
+													key={card.labelKey}
+													icon={card.icon}
+													label={t(card.labelKey)}
+												/>
+											))}
+										</div>
+									</div>
+								))}
+							</article>
 						</div>
-					</div>
-				))}
+					))}
+				</div>
 			</div>
 		</Layout>
 	);
