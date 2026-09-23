@@ -54,7 +54,9 @@
     "visualStudioCode": "Visual Code",
     "docker": "Docker",
     "notion": "Notion",
-    "flutter": "Flutter"
+    "flutter": "Flutter",
+    "vitest": "Vitest",
+    "copilot": "Copilot"
   },
   "workExperience": {
     "title": "Experiencia laboral",
@@ -64,7 +66,7 @@
       "position1": "Frontend Team Lead, 2025 - actual (Remoto)",
       "info1": "Gestión del equipo frontend (3) y equipo de diseño (2)",
       "info2": "Participación en decisiones técnicas y de arquitectura del proyecto",
-      "info3": "Experiencia trabajando con metodología Scrum / AGILE",
+      "info3": "Experiencia trabajando con metodología AGILE",
       "info4": "Participación en el proceso de selección de nuevos empleados.",
       "position2": "Senior Frontend developer, 2024 - 2025 (Remoto)",
       "info5": "Participación en el desarrollo de una nueva plataforma de ciberseguridad (xMDR)",
@@ -96,6 +98,15 @@
       "info5": "Onboarding de nuevos compañeros",
       "info6": "Configuración de GitLab Pipelines",
       "info7": "Experiencia con Google Play Console / App Center / Xcode"
+    },
+    "keapps": {
+      "companyName": "Keapps",
+      "otherInformation": "Frontend Tech Lead, 2025 - actual (Remoto)",
+      "info1": "Frontend Tech Lead en un proyecto interno de Nestlé.",
+      "info2": "Tomando decisiones de arquitectura para escalar y mejorar la aplicación.",
+      "info3": "Mejoras generales de la aplicación en rendimiento, calidad de código y experiencia de desarrollo.",
+      "info4": "Onboarding de nuevos compañeros",
+      "info5": "Experiencia trabajando con metodología AGILE"
     },
     "clibb": {
       "companyName": "Clibb",

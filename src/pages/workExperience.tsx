@@ -2,24 +2,39 @@ import bonareaLogo from "@/assets/images/companies/bonarea.png";
 import clibbLogo from "@/assets/images/companies/clibb.webp";
 import nexionaLogo from "@/assets/images/companies/nexiona.webp";
 import cipherLogo from "@/assets/images/companies/cipher.webp";
+import keappsLogo from "@/assets/images/companies/keapps-logo.webp";
 import { CompanyDetailCard } from "@/components/card";
 import { Layout } from "@/components/layout";
 import { icons } from "@/utils/icons";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import { useLocation } from "@tanstack/react-router";
 
 const WorkExperience = () => {
   const { t } = useTranslation();
 
+  const location = useLocation();
+
   useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
-  }, []);
+    const hash = location.hash;
+    if (!hash) return;
+    const id = hash.replace("#", "");
+    // Wait two animation frames so layout (and async logos) settle before scrolling
+    const raf1 = requestAnimationFrame(() => {
+      const raf2 = requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+      cleanupRaf2 = raf2;
+    });
+    let cleanupRaf2 = 0;
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(cleanupRaf2);
+    };
+  }, [location.hash]);
 
   return (
     <Layout>
@@ -31,6 +46,34 @@ const WorkExperience = () => {
           {t("workExperience.intro")}
         </p>
         <div className="flex flex-col gap-4 pb-4">
+          <CompanyDetailCard
+            id="keapps"
+            companyName={t("workExperience.keapps.companyName")}
+            otherInformation={t("workExperience.keapps.otherInformation")}
+            companyIcon={<img src={keappsLogo} alt="Keapps" />}
+            listOfPositions={[
+              {
+                listOfInformation: [
+                  t("workExperience.keapps.info1"),
+                  t("workExperience.keapps.info2"),
+                  t("workExperience.keapps.info3"),
+                  t("workExperience.keapps.info4"),
+                ],
+              },
+            ]}
+            stack={[
+              { icon: icons.stackIcons.vite, label: t("stack.vite") },
+              { icon: icons.stackIcons.zustand, label: t("stack.zustand") },
+              { icon: icons.stackIcons.react, label: t("stack.react") },
+              { icon: icons.stackIcons.typescript, label: t("stack.typescript") },
+              { icon: icons.stackIcons.git, label: t("stack.git") },
+              { icon: icons.stackIcons.figma, label: t("stack.figma") },
+              { icon: icons.stackIcons.vitest, label: t("stack.vitest") },
+              { icon: icons.stackIcons.reactquery, label: t("stack.reactQuery") },
+              { icon: icons.stackIcons.reactRouter, label: t("stack.reactRouter") },
+              { icon: icons.stackIcons.copilot, label: t("stack.copilot") },
+            ]}
+          />
           <CompanyDetailCard
             id="cipher"
             companyName={t("workExperience.cipher.companyName")}

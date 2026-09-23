@@ -33,7 +33,7 @@ const CompanyDetailCard = ({
         <div className="h-1 ring-slate-100 w-3 rounded-full ring-4 bg-slate-400/20 mt-10"/>
         <div className="h-full bg-gradient-to-b from-slate-100 w-[3px]  "/>
       </div>
-    <article id={id} className="flex flex-col space-y-2 rounded-tr-lg px-4 py-4 shadow-sm w-full">
+    <article id={id} className="flex flex-col space-y-2 rounded-tr-lg px-4 py-4 shadow-sm w-full scroll-mt-24">
      
       <div className="flex flex-wrap items-center gap-4">
         <div

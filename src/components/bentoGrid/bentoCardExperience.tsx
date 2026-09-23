@@ -2,6 +2,7 @@ import bonareaLogo from "@/assets/images/companies/bonarea.png";
 import clibbLogo from "@/assets/images/companies/clibb.webp";
 import nexionaLogo from "@/assets/images/companies/nexiona.webp";
 import cipherLogo from "@/assets/images/companies/cipher.webp";
+import keappsLogo from "@/assets/images/companies/keapps-logo.webp";
 import CompanyExperienceCard from "@/components/card/companyExperienceCard";
 import { icons } from "@/utils/icons";
 import clsx from "clsx";
@@ -11,6 +12,13 @@ interface BentoCardExperienceProps {
 }
 
 const workExperience = [
+  {
+    id: "keapps",
+    company: "Keapps",
+    description: "Frontend Tech Lead",
+    time: "2025 - Present (Remote)",
+    icon: <img src={keappsLogo} alt="Keapps" />,
+  },
   {
     id: "cipher",
     company: "Cipher Prosegur",
