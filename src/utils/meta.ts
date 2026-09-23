@@ -55,4 +55,9 @@ export const pageMeta = {
     description:
       "Browse through my professional journey as a Frontend Team Lead and my experience working with various companies in the tech industry.",
   },
+  linakController: {
+    title: "LINAK Controller",
+    description:
+      "Electron app to automate IKEA LINAK standing desks with sit/stand presets, weekday schedules and Web Bluetooth.",
+  },
 };

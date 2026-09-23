@@ -1,4 +1,5 @@
 import Home from "@/pages/home";
+import LinakController from "@/pages/linakController";
 import Stack from "@/pages/stack";
 import WorkExperience from "@/pages/workExperience";
 import { pageMeta, updateMeta } from "@/utils/meta";
@@ -41,6 +42,15 @@ const workExperienceRoute = createRoute({
   },
 });
 
+const linakControllerRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/projects/linak-controller",
+  component: LinakController,
+  beforeLoad: () => {
+    updateMeta(pageMeta.linakController);
+  },
+});
+
 const notFoundRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "*",
@@ -62,10 +72,17 @@ const stackNotFoundRoute = createRoute({
   component: Stack,
 });
 
+const linakControllerNotFoundRoute = createRoute({
+  getParentRoute: () => linakControllerRoute,
+  path: "*",
+  component: LinakController,
+});
+
 const routeTree = rootRoute.addChildren([
   homeRoute,
   stackRoute.addChildren([stackNotFoundRoute]),
   workExperienceRoute.addChildren([workExperienceNotFoundRoute]),
+  linakControllerRoute.addChildren([linakControllerNotFoundRoute]),
   notFoundRoute,
 ]);
 

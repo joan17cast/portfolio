@@ -109,5 +109,24 @@
   "contact": "Contacto",
   "comingSoon": "Próximamente...",
   "projectsTitle": "Proyectos",
-  "moreInfo": "Más información"
+  "moreInfo": "Más información",
+  "projectItems": {
+    "linak": {
+      "name": "LINAK Controller",
+      "description": "App Electron para automatizar escritorios IKEA LINAK con posiciones sentado/de pie, horarios y Web Bluetooth.",
+      "time": "2026",
+      "otherInformation": "App Electron, 2026",
+      "intro": "Aplicación de escritorio para automatizar un escritorio regulable IKEA LINAK. Puede cambiar a una posición concreta a horas específicas o alternar automáticamente entre sentado y de pie, para usar de verdad la posición de pie a lo largo del día.",
+      "screenshotAlt": "Pantalla principal de LINAK Controller",
+      "github": "Ver en GitHub",
+      "info1": "Conecta el escritorio por Web Bluetooth, sin emparejarlo en el sistema operativo.",
+      "info2": "Muestra la altura actual en centímetros, pulgadas o milímetros.",
+      "info3": "Pasa a la posición sentado o de pie con un solo clic.",
+      "info4": "Mantén los controles de subir/bajar para ajustar la altura y detén el movimiento en cualquier momento.",
+      "info5": "Crea horarios por día de la semana para alternar sentado/de pie o ir a una posición concreta.",
+      "info6": "Automatización en segundo plano con aviso sonoro y overlay cuando toca cambiar de postura.",
+      "info7": "Permanece en la bandeja del sistema y reconecta al último escritorio al arrancar.",
+      "info8": "Opción de iniciar al iniciar sesión."
+    }
+  }
 }
