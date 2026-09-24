@@ -58,6 +58,8 @@ const WorkExperience = () => {
                   t("workExperience.keapps.info2"),
                   t("workExperience.keapps.info3"),
                   t("workExperience.keapps.info4"),
+                  t("workExperience.keapps.info6"),
+                  t("workExperience.keapps.info7"),
                 ],
               },
             ]}
@@ -87,6 +89,7 @@ const WorkExperience = () => {
                   t("workExperience.cipher.info3"),
                   t("workExperience.cipher.info4"),
                   t("workExperience.cipher.info10"),
+                  t("workExperience.cipher.info11"),
                 ]
               },
               {

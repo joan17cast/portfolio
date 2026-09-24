@@ -74,7 +74,8 @@
       "info7": "Onboarding de nuevos compañeros (Pair programming)",
       "info8": "Participación en decisiones técnicas y de arquitectura del proyecto",
       "info9": "Mejorar la configuración de typescript y el linter",
-      "info10": "Mejoró la gestión de la junta y los Dailys"
+      "info10": "Mejoró la gestión de la junta y los Dailys",
+      "info11": "Formación en GitHub Copilot."
     },
     "nexiona": {
       "companyName": "Nexiona IOT Consultan Company",
@@ -106,7 +107,9 @@
       "info2": "Tomando decisiones de arquitectura para escalar y mejorar la aplicación.",
       "info3": "Mejoras generales de la aplicación en rendimiento, calidad de código y experiencia de desarrollo.",
       "info4": "Onboarding de nuevos compañeros",
-      "info5": "Experiencia trabajando con metodología AGILE"
+      "info5": "Experiencia trabajando con metodología AGILE",
+      "info6": "Formado en Inteligencia Artificial por Google Gemini.",
+      "info7": "Implementé los test con Vitest."
     },
     "clibb": {
       "companyName": "Clibb",
