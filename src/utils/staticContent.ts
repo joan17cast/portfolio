@@ -3,6 +3,7 @@ import cipherImg from "@/assets/images/brands/cipher.webp";
 import dammImg from "@/assets/images/brands/damm.webp";
 import freseniusImg from "@/assets/images/brands/fresenius.webp";
 import grifolsImg from "@/assets/images/brands/grifols.webp";
+import keappsImg from "@/assets/images/brands/keapps.webp";
 import nestleImg from "@/assets/images/brands/nestle.webp";
 import puigImg from "@/assets/images/brands/puig.webp";
 import rdtImg from "@/assets/images/brands/rdt.webp";
@@ -60,6 +61,11 @@ export const companyListData = [
     icon: puigImg,
     url: "https://www.puig.com/",
     alt: "Puig",
+  },
+  {
+    icon: keappsImg,
+    url: "https://www.keapps.com/",
+    alt: "Keapps",
   },
 ];
 
