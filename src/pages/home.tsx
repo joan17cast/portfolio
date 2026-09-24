@@ -12,12 +12,12 @@ const Home = () => {
         backgroundImage:
           "radial-gradient(circle 1000px at top, rgba(166, 166, 163, 0.3), rgba(20,20,20,0.3))",
       }}
-      className="relative flex min-h-screen w-full flex-col items-center justify-start gap-1 bg-black px-4  md:px-20"
+      className="relative flex min-h-screen w-full flex-col items-stretch justify-start gap-1 bg-black"
 
 
     >
       <Navbar scrolled={false}/>
-      <section className="grid max-w-[1200px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 h-full pb-4">
+      <section className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 md:px-8 md:grid-cols-2 lg:grid-cols-3 h-full pb-4">
         <section className="col-span-1 flex flex-col justify-start gap-4 md:col-span-2 md:flex-row lg:col-span-1 lg:flex-col">
           <BentoCardExperience name={t("experience")} />
           <BentoCardEducation name={t("education")} />
