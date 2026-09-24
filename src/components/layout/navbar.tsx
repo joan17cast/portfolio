@@ -50,7 +50,7 @@ const Navbar = ({ scrolled }: { scrolled: boolean }) => {
             </h1>
           )}
           <p className="text-sm text-gray-400 sm:text-lg">
-            Frontend Team Lead at Cipher Prosegur
+            Frontend Tech Lead at Keapps
           </p>
         </div>
       </div>
